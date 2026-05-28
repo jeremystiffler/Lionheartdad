@@ -10,14 +10,16 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
-      {/* HERO */}
-      <section className="relative">
-        <div className="mx-auto max-w-4xl px-6 py-24 md:py-32 text-center">
+
+      {/* ═══ HERO ═══ */}
+      <section className="relative overflow-hidden min-h-[50vh] flex items-center">
+        <div className="glow-orb glow-orb-accent w-[500px] h-[500px] -top-40 right-0 opacity-[0.06]" />
+        <div className="relative mx-auto max-w-4xl px-6 py-20 md:py-28 text-center">
           <span className="inline-block text-xs font-bold uppercase tracking-[0.3em] text-accent mb-6">
             About
           </span>
           <h1
-            className="text-4xl md:text-6xl font-bold leading-[1.1] mb-8"
+            className="text-4xl md:text-6xl font-bold leading-[1.1] mb-8 text-balance"
             style={{ fontFamily: "var(--font-heading)" }}
           >
             About Lion
@@ -28,31 +30,36 @@ export default function AboutPage() {
             with the gospel at the center.
           </p>
         </div>
+        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent pointer-events-none" />
       </section>
 
-      {/* LABEL BREAK */}
-      <section className="bg-surface border-y border-border">
-        <div className="mx-auto max-w-3xl px-6 py-16 text-center">
+      {/* ═══ SCRIPTURE BREAK ═══ */}
+      <section className="relative py-16 md:py-20">
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-accent/[0.03] to-transparent" />
+        <div className="relative mx-auto max-w-3xl px-6 text-center">
+          <div className="w-10 h-[1.5px] bg-accent/20 mx-auto mb-8" />
           <blockquote
-            className="text-2xl md:text-3xl font-bold leading-snug italic"
+            className="text-2xl md:text-3xl font-bold leading-snug italic text-foreground/90"
             style={{ fontFamily: "var(--font-heading)" }}
           >
             &ldquo;For I have chosen him, so that he will direct his children
             and his household after him to keep the way of the Lord by doing
             what is right and just.&rdquo;
           </blockquote>
-          <cite className="block mt-4 text-sm text-text-muted not-italic">
+          <cite className="block mt-5 text-sm text-text-muted not-italic tracking-wide">
             — Genesis 18:19 (NIV)
           </cite>
+          <div className="w-10 h-[1.5px] bg-accent/20 mx-auto mt-8" />
         </div>
       </section>
 
-      {/* STORY: JEREMY */}
-      <section className="mx-auto max-w-4xl px-6 py-24">
-        <div className="grid md:grid-cols-5 gap-12 items-start">
+      {/* ═══ JEREMY STORY ═══ */}
+      <section className="mx-auto max-w-5xl px-6 py-16 md:py-24">
+        <div className="grid md:grid-cols-5 gap-12 md:gap-16 items-start">
+          {/* Profile Card */}
           <div className="md:col-span-2">
-            <div className="rounded-xl bg-surface border border-border p-8 text-center sticky top-24">
-              <div className="w-28 h-28 rounded-full bg-surface-light border-2 border-accent/30 mx-auto mb-4 flex items-center justify-center text-5xl">
+            <div className="card-elevated p-8 text-center sticky top-24">
+              <div className="w-24 h-24 rounded-full bg-surface-elevated border-2 border-accent/20 mx-auto mb-5 flex items-center justify-center text-5xl shadow-lg shadow-accent/5">
                 🦁
               </div>
               <h3
@@ -61,72 +68,79 @@ export default function AboutPage() {
               >
                 Jeremy Stiffler
               </h3>
-              <p className="text-sm text-text-muted mb-3">
+              <p className="text-sm text-text-muted mb-4">
                 Lexington, Kentucky
               </p>
               <div className="flex flex-wrap gap-2 justify-center text-xs text-text-muted">
-                <span className="rounded-full border border-border px-3 py-1">
-                  Father of boys (8 & 11)
-                </span>
-                <span className="rounded-full border border-border px-3 py-1">
-                  Worship Leader
-                </span>
-                <span className="rounded-full border border-border px-3 py-1">
-                  AV/Media Director
-                </span>
-                <span className="rounded-full border border-border px-3 py-1">
-                  Musician & Songwriter
-                </span>
+                {[
+                  "Father of boys (8 & 11)",
+                  "Worship Leader",
+                  "AV/Media Director",
+                  "Musician & Songwriter",
+                ].map((tag) => (
+                  <span key={tag} className="rounded-full border border-border/60 px-3 py-1 bg-background/50">
+                    {tag}
+                  </span>
+                ))}
               </div>
             </div>
           </div>
 
-          <div className="md:col-span-3 space-y-6 text-text-muted leading-relaxed">
+          {/* Story */}
+          <div className="md:col-span-3 space-y-6">
             <h2
-              className="text-3xl font-bold text-foreground mb-2"
+              className="text-3xl md:text-4xl font-bold text-foreground text-balance"
               style={{ fontFamily: "var(--font-heading)" }}
             >
-              A Dad Who Decided to Get Serious
+              A Dad Who Decided
+              <br />
+              <span className="gradient-text">to Get Serious</span>
             </h2>
-            <p>
-              It started simply: a handful of guys, meeting over lunch, talking
-              about what it actually means to lead your family when the world
-              is pulling your kids in a hundred directions.
-            </p>
-            <p>
-              Jeremy Stiffler isn&apos;t a professional counselor or a
-              seminary professor. He&apos;s a dad. A worship leader at Man of
-              War Church in Lexington, KY. A multi-instrumentalist and songwriter
-              who&apos;s spent years helping churches encounter God through
-              music. And a father of two boys, ages 8 and 11, who knows firsthand
-              that loving your kids well is the hardest, holy work you&apos;ll
-              ever do.
-            </p>
-            <p>
-              &ldquo;I kept running into guys who loved their families but had
-              no one holding them accountable. No brotherhood. No one asking,
-              &lsquo;How are you really doing as a father?&rsquo; I knew that
-              had to change.&rdquo;
-            </p>
-            <p>
-              So Lion was born — not as a program, but as a commitment. A small
-              group of men who decided they would rather be intentional fathers
-              than accidental ones.
-            </p>
+            <div className="space-y-4 text-text-muted leading-relaxed">
+              <p>
+                It started simply: a handful of guys, meeting over lunch, talking
+                about what it actually means to lead your family when the world
+                is pulling your kids in a hundred directions.
+              </p>
+              <p>
+                Jeremy Stiffler isn&apos;t a professional counselor or a
+                seminary professor. He&apos;s a dad. A worship leader at Man of
+                War Church in Lexington, KY. A multi-instrumentalist and songwriter
+                who&apos;s spent years helping churches encounter God through
+                music. And a father of two boys, ages 8 and 11, who knows firsthand
+                that loving your kids well is the hardest, holy work you&apos;ll
+                ever do.
+              </p>
+              <blockquote
+                className="text-lg font-semibold text-foreground/80 border-l-[3px] border-accent/40 pl-5 py-2 italic"
+                style={{ fontFamily: "var(--font-heading)" }}
+              >
+                &ldquo;I kept running into guys who loved their families but had
+                no one holding them accountable. No brotherhood. No one asking,
+                &lsquo;How are you really doing as a father?&rsquo; I knew that
+                had to change.&rdquo;
+              </blockquote>
+              <p>
+                So Lion was born — not as a program, but as a commitment. A small
+                group of men who decided they would rather be intentional fathers
+                than accidental ones.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* THE VISION */}
-      <section className="bg-surface border-y border-border">
-        <div className="mx-auto max-w-4xl px-6 py-24">
-          <div className="grid md:grid-cols-2 gap-12">
+      {/* ═══ THE VISION ═══ */}
+      <section className="relative py-16 md:py-24">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-surface/30 to-transparent" />
+        <div className="relative mx-auto max-w-5xl px-6">
+          <div className="grid md:grid-cols-2 gap-12 md:gap-16">
             <div>
               <span className="inline-block text-xs font-bold uppercase tracking-[0.25em] text-accent mb-4">
                 The Vision
               </span>
               <h2
-                className="text-3xl md:text-4xl font-bold leading-tight mb-6"
+                className="text-3xl md:text-4xl font-bold leading-tight mb-6 text-balance"
                 style={{ fontFamily: "var(--font-heading)" }}
               >
                 15 Years From Now
@@ -144,77 +158,79 @@ export default function AboutPage() {
                 who lead with courage and humility.
               </p>
             </div>
+
             <div className="space-y-4">
               <h3
-                className="text-lg font-bold text-foreground"
+                className="text-lg font-bold text-foreground mb-2"
                 style={{ fontFamily: "var(--font-heading)" }}
               >
                 What We&apos;re Building Toward
               </h3>
-              <div className="space-y-3">
-                {[
-                  {
-                    phase: "Now → 2027",
-                    text: "Weekly lunch brotherhoods. Church small groups. First weekend camp (20 men, May 2027).",
-                  },
-                  {
-                    phase: "2027 → 2029",
-                    text: "Multiple small groups running concurrently. Annual camps scaling to 50+ men. Youth mentorship pilot.",
-                  },
-                  {
-                    phase: "2029 → 2032",
-                    text: "Regional expansion. Father-son retreats. Emerging men&apos;s ministry for young adults.",
-                  },
-                  {
-                    phase: "2032 → 2041",
-                    text: "A generation of fathers who were fathered well, now fathering the next. The vision compounds.",
-                  },
-                ].map((item, i) => (
-                  <div
-                    key={i}
-                    className="rounded-lg border border-border bg-background p-5"
-                  >
-                    <div className="text-xs font-bold uppercase tracking-widest text-accent mb-2">
-                      {item.phase}
-                    </div>
-                    <p className="text-sm text-text-muted">{item.text}</p>
+              {[
+                {
+                  phase: "Now → 2027",
+                  text: "Weekly lunch brotherhoods. Church small groups. First weekend camp (20 men, May 2027).",
+                },
+                {
+                  phase: "2027 → 2029",
+                  text: "Multiple small groups running concurrently. Annual camps scaling to 50+ men. Youth mentorship pilot.",
+                },
+                {
+                  phase: "2029 → 2032",
+                  text: "Regional expansion. Father-son retreats. Emerging men's ministry for young adults.",
+                },
+                {
+                  phase: "2032 → 2041",
+                  text: "A generation of fathers who were fathered well, now fathering the next. The vision compounds.",
+                },
+              ].map((item, i) => (
+                <div
+                  key={i}
+                  className="card-soft p-5"
+                >
+                  <div className="text-xs font-bold uppercase tracking-widest text-accent mb-2">
+                    {item.phase}
                   </div>
-                ))}
-              </div>
+                  <p className="text-sm text-text-muted">{item.text}</p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
-      {/* THEOLOGY / FOUNDATION */}
-      <section className="mx-auto max-w-4xl px-6 py-24">
-        <span className="inline-block text-xs font-bold uppercase tracking-[0.25em] text-accent mb-4">
-          Our Foundation
-        </span>
-        <h2
-          className="text-3xl md:text-4xl font-bold leading-tight mb-8"
-          style={{ fontFamily: "var(--font-heading)" }}
-        >
-          Not Self-Help. Scripture.
-        </h2>
-        <div className="grid md:grid-cols-2 gap-8">
-          <div className="space-y-4 text-text-muted leading-relaxed">
-            <p>
-              Lion is not a motivational seminar. We don&apos;t believe
-              there&apos;s a 5-step system to being a great dad. We believe
-              there&apos;s a God who designed fatherhood, and that His Word is
-              sufficient.
-            </p>
-            <p>
-              Our approach is simple: gather men around Scripture, make space
-              for honest conversation, and hold each other accountable to live
-              what we read.
-            </p>
-            <p>
-              We believe:
-            </p>
+      {/* ═══ THEOLOGY / FOUNDATION ═══ */}
+      <section className="mx-auto max-w-5xl px-6 py-16 md:py-24">
+        <div className="grid md:grid-cols-2 gap-12 md:gap-16">
+          <div>
+            <span className="inline-block text-xs font-bold uppercase tracking-[0.25em] text-accent mb-4">
+              Our Foundation
+            </span>
+            <h2
+              className="text-3xl md:text-4xl font-bold leading-tight mb-8 text-balance"
+              style={{ fontFamily: "var(--font-heading)" }}
+            >
+              Not Self-Help.
+              <br />
+              <span className="gradient-text">Scripture.</span>
+            </h2>
+            <div className="space-y-4 text-text-muted leading-relaxed">
+              <p>
+                Lion is not a motivational seminar. We don&apos;t believe
+                there&apos;s a 5-step system to being a great dad. We believe
+                there&apos;s a God who designed fatherhood, and that His Word is
+                sufficient.
+              </p>
+              <p>
+                Our approach is simple: gather men around Scripture, make space
+                for honest conversation, and hold each other accountable to live
+                what we read.
+              </p>
+              <p className="text-foreground font-semibold pt-2">We believe:</p>
+            </div>
           </div>
-          <div className="rounded-xl border border-border bg-surface p-8">
+
+          <div className="card-elevated p-8 md:p-10">
             <ul className="space-y-4 text-sm">
               {[
                 "The Bible is the authoritative guide for fatherhood and family.",
@@ -225,8 +241,8 @@ export default function AboutPage() {
                 "The local church is central — we do this inside the body, not apart from it.",
               ].map((belief, i) => (
                 <li key={i} className="flex gap-3">
-                  <span className="text-accent mt-0.5 shrink-0">✝</span>
-                  <span className="text-text-muted">{belief}</span>
+                  <span className="text-accent mt-0.5 shrink-0 opacity-70">✝</span>
+                  <span className="text-text-muted leading-relaxed">{belief}</span>
                 </li>
               ))}
             </ul>
@@ -234,34 +250,31 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="bg-surface border-y border-border">
-        <div className="mx-auto max-w-2xl px-6 py-20 text-center">
+      {/* ═══ CTA ═══ */}
+      <section className="relative py-16 md:py-24">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-surface/40 to-transparent" />
+        <div className="glow-orb glow-orb-accent w-[400px] h-[400px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.06]" />
+        <div className="relative mx-auto max-w-2xl px-6 text-center">
           <h2
-            className="text-2xl md:text-4xl font-bold leading-tight mb-6"
+            className="text-2xl md:text-4xl font-bold leading-tight mb-6 text-balance"
             style={{ fontFamily: "var(--font-heading)" }}
           >
             Join the Brotherhood
           </h2>
-          <p className="text-text-muted leading-relaxed mb-8">
+          <p className="text-text-muted leading-relaxed mb-10 max-w-md mx-auto">
             The front door is a lunch table. Pull up a chair.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/small-group"
-              className="inline-flex items-center justify-center rounded-md bg-accent px-8 py-4 text-base font-bold uppercase tracking-wider text-white hover:bg-accent-light transition-colors"
-            >
+            <Link href="/small-group" className="btn-primary">
               Small Group Info
             </Link>
-            <Link
-              href="/camp"
-              className="inline-flex items-center justify-center rounded-md border border-border px-8 py-4 text-base font-bold uppercase tracking-wider text-foreground hover:border-accent/50 transition-colors"
-            >
+            <Link href="/camp" className="btn-secondary">
               Weekend Camp 2027
             </Link>
           </div>
         </div>
       </section>
+
     </>
   );
 }
