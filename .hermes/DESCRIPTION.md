@@ -1,0 +1,1 @@
+Project scaffold for lionheartdad.com — Next.js + Tailwind, Vercel-ready. Scaffolding created by Hermes Agent on 2026-05-28. TODO: update README with deployment steps, Mailchimp keys, Calendly embed, Stripe webhook secret. CMS deferred. User requested no paid CMS yet.
