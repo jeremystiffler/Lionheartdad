@@ -1,26 +1,65 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0f0f0f;
+  --foreground: #f5f0eb;
+  --accent: #c8956c;
+  --accent-light: #e8c9a0;
+  --accent-dark: #8b5e3c;
+  --surface: #1a1a1a;
+  --surface-light: #2a2a2a;
+  --text-muted: #a0a0a0;
+  --text-heading: #f5f0eb;
+  --border: #333;
+  --success: #5a9;
+  --font-heading: Georgia, "Times New Roman", serif;
+  --font-body: system-ui, -apple-system, sans-serif;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-accent: var(--accent);
+  --color-accent-light: var(--accent-light);
+  --color-accent-dark: var(--accent-dark);
+  --color-surface: var(--surface);
+  --color-surface-light: var(--surface-light);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--text-heading);
+}
+
+a {
+  color: var(--accent);
+  transition: color 0.2s;
+}
+a:hover {
+  color: var(--accent-light);
+}
+
+::selection {
+  background: var(--accent-dark);
+  color: white;
 }
