@@ -1,6 +1,9 @@
 import Link from "next/link";
+import CalendlyEmbed from "@/components/CalendlyEmbed";
+import MailchimpForm from "@/components/MailchimpForm";
 
-/* ─── Shared Components ─── */
+// ─── Config ───
+const CALENDLY_URL = "https://calendly.com/jeremystiffler/15min"; // TODO: update with your Calendly link
 
 function SectionHeading({
   eyebrow,
@@ -301,15 +304,7 @@ export default function Home() {
                 Schedule a 15-minute chat with Jeremy. No pressure. Just a
                 conversation.
               </p>
-              <a
-                href="mailto:jeremy@lionheartdad.com?subject=I'd like to get involved with Lion"
-                className="btn-primary w-full sm:w-auto"
-              >
-                Reach Out Now
-              </a>
-              <p className="text-xs text-text-muted mt-4 opacity-60">
-                (Calendly scheduling coming soon — email us for now)
-              </p>
+              <CalendlyEmbed url={CALENDLY_URL} />
             </div>
 
             {/* Email List */}
@@ -327,15 +322,7 @@ export default function Home() {
                 Get occasional emails — a verse, a thought for dads, and updates
                 from Lion. No spam. Just substance.
               </p>
-              <a
-                href="mailto:jeremy@lionheartdad.com?subject=Add me to the Lion email list"
-                className="btn-secondary w-full sm:w-auto"
-              >
-                Join the List
-              </a>
-              <p className="text-xs text-text-muted mt-4 opacity-60">
-                (Mailchimp signup form coming soon — email us to subscribe)
-              </p>
+              <MailchimpForm />
             </div>
           </div>
         </div>
