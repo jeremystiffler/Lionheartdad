@@ -5,7 +5,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Small Group",
   description:
-    "A 7-week small group for fathers at Man of War Church. September 14 – October 26, 2026. Scripture, accountability, and brotherhood.",
+    "A 7-week small group for fathers at Man of War Church. September 14 – October 26, 2026. Based on Jon Tyson's 'The Intentional Father.'",
   openGraph: {
     title: "Small Group — Lion Intentional Fathers",
     description:
@@ -13,48 +13,65 @@ export const metadata: Metadata = {
   },
 };
 
+// 7-week curriculum mapped to Jon Tyson's "The Intentional Father"
+// Book structure: Part 1 (Ch 1-2), Part 2 (Ch 3-4), Part 3 (Ch 5-7),
+//                 Part 4 (Ch 8-13), Part 5 (Ch 14-16)
 const curriculum = [
   {
     num: 1,
-    title: "The Father God Intended",
+    bookRef: "Ch. 1–2",
+    bookPart: "Part 1: Introduction",
+    title: "The Need for Fathers",
     description:
-      "Who is God as Father? What does His fatherhood reveal about ours? Genesis 1–3, Psalm 103:13, Matthew 7:11.",
+      "Why fatherhood is the most overlooked crucial role in society. The five kinds of fathers — which one are you? Malachi 4:6, Ephesians 6:4.",
   },
   {
     num: 2,
-    title: "The Weight of the Crown",
+    bookRef: "Ch. 3–4",
+    bookPart: "Part 2: Preparation",
+    title: "A Preview of the Possible",
     description:
-      "What does biblical headship actually look like? Ephesians 5:25–33, Colossians 3:19. Sacrificial, not tyrannical.",
+      "What does intentional fatherhood actually look like? Honoring your own father — even if he failed you. Practical preparation steps. Joshua 24:15.",
   },
   {
     num: 3,
-    title: "Training Up Without Provoking",
+    bookRef: "Ch. 5–7",
+    bookPart: "Part 3: Initiation",
+    title: "Ceremony, Home & Values",
     description:
-      "Ephesians 6:4 unpacked. How to discipline in love, not anger. Deuteronomy 6:4–9 in the modern home.",
+      "The power of marking moments. Establishing your home's culture. Defining the values that will shape your sons. Deuteronomy 6:4–9.",
   },
   {
     num: 4,
-    title: "The Praying Father",
+    bookRef: "Ch. 8",
+    bookPart: "Part 4: Formation",
+    title: "The Five Shifts",
     description:
-      "Your weapon most neglected: intercession for your children. Mark 14:38, James 5:16.",
+      "Five shifts every father must make to raise sons of character. Moving from passive to reactive to proactive. 2 Timothy 2:2.",
   },
   {
     num: 5,
-    title: "Money, Work, and Priorities",
+    bookRef: "Ch. 9–10",
+    bookPart: "Part 4: Formation",
+    title: "Preparing for Moments",
     description:
-      "Stewarding what God entrusted. 1 Timothy 5:8, Matthew 6:33. Work-life balance is a myth — it's worship alignment.",
+      "The power of preparing for key moments — don't let them happen by accident. Being good at being a man: what that means biblically vs. culturally. Matthew 7:11, Psalm 103:13.",
   },
   {
     num: 6,
-    title: "Leading Through Crisis",
+    bookRef: "Ch. 11–13",
+    bookPart: "Part 4: Formation",
+    title: "Roles, Identity & the Arc of Life",
     description:
-      "When your marriage is hard. When your kids rebel. When God feels silent. James 1:2–4, Psalm 46.",
+      "The roles a father must master. Helping your son discover who God made him to be. Understanding the arc of life — from boyhood to manhood. James 1:2–4.",
   },
   {
     num: 7,
-    title: "Leaving a Legacy",
+    bookRef: "Ch. 14–16",
+    bookPart: "Part 5: Recognition",
+    title: "Recognition & Legacy",
     description:
-      "Where do we go from here? Joshua 24:15, 2 Timothy 2:2. Building a plan. Committing to the men at your side.",
+      "The gap year. The ceremony of welcome and blessing. Becoming the intentional father. Building a plan for the next season. Joshua 24:15.",
   },
 ];
 
@@ -79,8 +96,9 @@ export default function SmallGroupPage() {
             <span className="gold-shimmer">Change Your Fatherhood</span>
           </h1>
           <p className="lead max-w-xl mx-auto">
-            A men&apos;s small group at Man of War Church. Real talk. Real
-            Scripture. Real accountability. It starts September 14.
+            A men&apos;s small group at Man of War Church. Based on Jon
+            Tyson&apos;s book <em>The Intentional Father</em>. Real talk.
+            Real Scripture. Real accountability.
           </p>
         </div>
       </section>
@@ -109,59 +127,34 @@ export default function SmallGroupPage() {
         </div>
       </section>
 
-      {/* ═══ WHAT TO EXPECT ═══ */}
+      {/* ═══ THE BOOK ═══ */}
       <section className="section-spacious">
         <div className="container">
           <div className="max-w-2xl mx-auto text-center mb-14">
-            <span className="eyebrow mb-4">What to Expect</span>
-            <h2 className="mb-6">This Is Not a Bible Study</h2>
+            <span className="eyebrow mb-4">The Book</span>
+            <h2 className="mb-6">The Intentional Father</h2>
+            <p className="mb-4" style={{ fontFamily: "var(--heading)", fontSize: "1.15rem", color: "var(--text-secondary)", fontStyle: "italic" }}>
+              by Jon Tyson
+            </p>
             <div className="space-y-5 text-[#c4b9ae] leading-relaxed text-left">
               <p>
-                It&apos;s better. A Bible study teaches you <em>about</em> God&apos;s
-                Word. This group <em>lives</em> it.
+                Over 150,000 copies sold. This is the roadmap we&apos;re
+                walking through together — not as a book club, but as men who
+                are putting it into practice in our own homes.
               </p>
               <p>
-                Each week, you&apos;ll walk in having read a passage and answered
-                some hard questions about your own household. Then you&apos;ll sit
-                with men who are in the trenches just like you — working through the
-                text, confessing failures, celebrating wins, and committing to one
-                concrete step for the week ahead.
+                Tyson lays out a clear path: <strong className="text-[#f5f0eb]">Introduction</strong> →{" "}
+                <strong className="text-[#f5f0eb]">Preparation</strong> →{" "}
+                <strong className="text-[#f5f0eb]">Initiation</strong> →{" "}
+                <strong className="text-[#f5f0eb]">Formation</strong> →{" "}
+                <strong className="text-[#f5f0eb]">Recognition</strong>.
               </p>
               <p>
-                This is intercessory brotherhood: men who pray for each other,
-                challenge each other, and refuse to let each other coast.
+                Each week covers 2–3 chapters. You&apos;ll read ahead, come
+                ready to talk honestly, and commit to one concrete step for your
+                household.
               </p>
             </div>
-          </div>
-
-          <div className="grid sm:grid-cols-3 gap-4 max-w-3xl mx-auto">
-            {[
-              {
-                title: "Scripture-Centered",
-                text: "Every week built around key passages on fatherhood, leadership, and the family.",
-                icon: "📖",
-              },
-              {
-                title: "Accountability",
-                text: "Weekly check-ins. What did you do? What did you miss? No judgment — just faithfulness.",
-                icon: "🤝",
-              },
-              {
-                title: "Church-Anchored",
-                text: "Hosted at Man of War Church. Connected to the body. Not a side project.",
-                icon: "⛪",
-              },
-            ].map((card) => (
-              <div key={card.title} className="card text-center">
-                <div className="text-3xl mb-3">{card.icon}</div>
-                <h3 className="mb-2 text-[0.8rem] font-bold tracking-wide uppercase">
-                  {card.title}
-                </h3>
-                <p className="text-sm text-[#8a7e74] leading-relaxed">
-                  {card.text}
-                </p>
-              </div>
-            ))}
           </div>
         </div>
       </section>
@@ -185,9 +178,9 @@ export default function SmallGroupPage() {
             <span className="eyebrow mb-4">Curriculum Overview</span>
             <h2 className="mb-4">The 7-Week Journey</h2>
             <p className="lead max-w-lg mx-auto">
-              Each week builds on the last. By the end, you&apos;ll have a
-              framework for your household that&apos;s rooted in the gospel, not
-              culture.
+              Each week maps to Jon Tyson&apos;s book. By the end,
+              you&apos;ll have a framework for your household rooted in the
+              gospel, not culture.
             </p>
           </div>
 
@@ -202,6 +195,9 @@ export default function SmallGroupPage() {
                     {week.num}
                   </div>
                   <div>
+                    <div className="eyebrow mb-1" style={{ fontSize: "0.55rem" }}>
+                      {week.bookRef} · {week.bookPart}
+                    </div>
                     <h3 className="font-semibold mb-1">{week.title}</h3>
                     <p className="text-sm text-[#8a7e74] leading-relaxed">
                       {week.description}
@@ -214,12 +210,67 @@ export default function SmallGroupPage() {
         </div>
       </section>
 
+      {/* ═══ WHAT TO EXPECT ═══ */}
+      <section className="section-spacious">
+        <div className="container">
+          <div className="max-w-2xl mx-auto text-center mb-14">
+            <span className="eyebrow mb-4">What to Expect</span>
+            <h2 className="mb-6">This Is Not a Bible Study</h2>
+            <div className="space-y-5 text-[#c4b9ae] leading-relaxed text-left">
+              <p>
+                It&apos;s better. A Bible study teaches you <em>about</em>{" "}
+                God&apos;s Word. This group <em>lives</em> it.
+              </p>
+              <p>
+                Each week, you&apos;ll walk in having read the assigned chapters
+                and answered some hard questions about your own household.
+                Then you&apos;ll sit with men who are in the trenches just like
+                you — working through the text, confessing failures,
+                celebrating wins, and committing to one concrete step for the
+                week ahead.
+              </p>
+              <p>
+                This is intercessory brotherhood: men who pray for each other,
+                challenge each other, and refuse to let each other coast.
+              </p>
+            </div>
+          </div>
+
+          <div className="grid sm:grid-cols-3 gap-4 max-w-3xl mx-auto">
+            {[
+              {
+                title: "Scripture-Centered",
+                text: "Every week built around key passages on fatherhood, leadership, and the family.",
+              },
+              {
+                title: "Accountability",
+                text: "Weekly check-ins. What did you do? What did you miss? No judgment — just faithfulness.",
+              },
+              {
+                title: "Church-Anchored",
+                text: "Hosted at Man of War Church. Connected to the body. Not a side project.",
+              },
+            ].map((card) => (
+              <div key={card.title} className="card text-center">
+                <h3 className="mb-2 text-[0.8rem] font-bold tracking-wide uppercase">
+                  {card.title}
+                </h3>
+                <p className="text-sm text-[#8a7e74] leading-relaxed">
+                  {card.text}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ═══ QUOTE ═══ */}
       <section className="section bg-warm">
         <div className="container text-center">
           <div className="pullquote">
-            &ldquo;As for me and my house, we will serve the Lord.&rdquo;
-            <cite>— Joshua 24:15</cite>
+            &ldquo;He will turn the hearts of the parents to their children, and
+            the hearts of the children to their parents.&rdquo;
+            <cite>— Malachi 4:6</cite>
           </div>
         </div>
       </section>
@@ -229,15 +280,18 @@ export default function SmallGroupPage() {
         <div className="container text-center">
           <span className="eyebrow mb-4">RSVP</span>
           <h2 className="mb-4">Reserve Your Seat</h2>
-          <p className="lead max-w-md mx-auto mb-10">
-            Spots are limited to keep the group intimate. Tell us you&apos;re
-            coming and we&apos;ll send you the details.
+          <p className="lead max-w-md mx-auto mb-4">
+            We&apos;re looking for 10 men who are serious about leading their
+            homes. Spots are limited to keep the group intimate.
+          </p>
+          <p className="text-[#8a7e74] max-w-md mx-auto mb-10 text-sm">
+            Get the book: <em>The Intentional Father</em> by Jon Tyson. We'll start with Chapters 1–2 in Week 1.
           </p>
           <a
-            href="mailto:jeremy@lionheartdad.com?subject=Small Group RSVP"
+            href="mailto:jeremy@lionheartdad.com?subject=Small Group RSVP — 7-Week Intentional Father"
             className="btn-primary"
           >
-            Reserve Your Seat
+            I'm In — Reserve My Seat
           </a>
         </div>
       </section>
