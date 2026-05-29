@@ -43,7 +43,7 @@ export default function AboutPage() {
             {/* Profile */}
             <div className="md:col-span-2">
               <div className="card text-center md:sticky md:top-24">
-                <div className="w-20 h-20 rounded-full bg-[#ede8e1] border border-[#8b6f47]/15 mx-auto mb-5 flex items-center justify-center text-4xl">
+                <div className="w-20 h-20 rounded-full bg-[#1a1714] border border-[rgba(201,168,92,0.15)] mx-auto mb-5 flex items-center justify-center text-4xl">
                   🦁
                 </div>
                 <h3
@@ -52,7 +52,7 @@ export default function AboutPage() {
                 >
                   Jeremy Stiffler
                 </h3>
-                <p className="text-sm text-[#8a8078] mb-5">Lexington, Kentucky</p>
+                <p className="text-sm text-[#8a7e74] mb-5">Lexington, Kentucky</p>
                 <div className="flex flex-wrap gap-2 justify-center">
                   {[
                     "Father of boys (8 & 11)",
@@ -62,7 +62,7 @@ export default function AboutPage() {
                   ].map((tag) => (
                     <span
                       key={tag}
-                      className="text-[0.65rem] font-semibold tracking-[0.1em] uppercase text-[#8a8078] border border-[#8b6f47]/10 rounded-full px-3 py-1 bg-[#faf8f5]"
+                      className="text-[0.65rem] font-semibold tracking-[0.1em] uppercase text-[#8a7e74] border border-[rgba(201,168,92,0.10)] rounded-full px-3 py-1 bg-[#1c1917]"
                     >
                       {tag}
                     </span>
@@ -79,7 +79,7 @@ export default function AboutPage() {
                 <br />
                 to Get Serious
               </h2>
-              <div className="space-y-5 text-[#5c554d] leading-relaxed">
+              <div className="space-y-5 text-[#c4b9ae] leading-relaxed">
                 <p>
                   It started simply: a handful of guys, meeting over lunch,
                   talking about what it actually means to lead your family when
@@ -95,7 +95,7 @@ export default function AboutPage() {
                   hardest, holy work you&apos;ll ever do.
                 </p>
                 <blockquote
-                  className="border-l-2 border-[#8b6f47]/30 pl-5 py-2 italic text-[#1a1714]"
+                  className="border-l-2 border-[#c9a85c]/30 pl-5 py-2 italic text-[#f5f0eb]"
                   style={{ fontFamily: "var(--heading)" }}
                 >
                   &ldquo;I kept running into guys who loved their families but
@@ -121,7 +121,7 @@ export default function AboutPage() {
             <div>
               <span className="eyebrow mb-4">The Vision</span>
               <h2 className="mb-6 text-balance">15 Years From Now</h2>
-              <div className="space-y-4 text-[#5c554d] leading-relaxed">
+              <div className="space-y-4 text-[#c4b9ae] leading-relaxed">
                 <p>
                   The vision isn&apos;t small. Over the next 15 years, Lion
                   aims to see a network of fathers and young men across
@@ -164,8 +164,8 @@ export default function AboutPage() {
                   },
                 ].map((item, i) => (
                   <div key={i} className="card">
-                    <div className="eyebrow mb-1.5 text-[#8b6f47]">{item.phase}</div>
-                    <p className="text-sm text-[#5c554d]">{item.text}</p>
+                    <div className="eyebrow mb-1.5 text-[#c9a85c]">{item.phase}</div>
+                    <p className="text-sm text-[#c4b9ae]">{item.text}</p>
                   </div>
                 ))}
               </div>
@@ -185,7 +185,7 @@ export default function AboutPage() {
                 <br />
                 Scripture.
               </h2>
-              <div className="space-y-4 text-[#5c554d] leading-relaxed">
+              <div className="space-y-4 text-[#c4b9ae] leading-relaxed">
                 <p>
                   Lion is not a motivational seminar. We don&apos;t believe
                   there&apos;s a 5-step system to being a great dad. We believe
@@ -214,8 +214,8 @@ export default function AboutPage() {
                   "The local church is central — we do this inside the body, not apart from it.",
                 ].map((belief, i) => (
                   <li key={i} className="flex gap-3">
-                    <span className="text-[#8b6f47] mt-0.5 opacity-50">✝</span>
-                    <span className="text-sm text-[#5c554d] leading-relaxed">{belief}</span>
+                    <span className="text-[#c9a85c] mt-0.5 opacity-50">✝</span>
+                    <span className="text-sm text-[#c4b9ae] leading-relaxed">{belief}</span>
                   </li>
                 ))}
               </ul>

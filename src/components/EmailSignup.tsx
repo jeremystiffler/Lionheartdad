@@ -14,7 +14,7 @@ export default function EmailSignup({
   return (
     <div className={`card text-center ${className}`}>
       <h3 className="mb-2">{heading}</h3>
-      <p className="text-sm text-[#8a8078] mb-5 max-w-md mx-auto">{subtext}</p>
+      <p className="text-sm text-[var(--text-muted)] mb-5 max-w-md mx-auto">{subtext}</p>
       <MailchimpForm />
     </div>
   );

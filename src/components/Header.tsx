@@ -15,12 +15,12 @@ export default function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-[#faf8f5]/90 backdrop-blur-sm border-b border-border-light">
+    <header className="sticky top-0 z-50 bg-[#141210]/90 backdrop-blur-sm border-b border-border">
       <div className="container-wide flex items-center justify-between py-5 px-6">
         <Link href="/" className="flex items-center gap-2.5 group">
           <span className="text-xl">🦁</span>
           <span
-            className="text-lg font-normal tracking-tight text-[#1a1714]"
+            className="text-lg font-normal tracking-tight text-[#f5f0eb]"
             style={{ fontFamily: "var(--heading)" }}
           >
             Lion
@@ -33,7 +33,7 @@ export default function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-[0.7rem] font-semibold tracking-[0.2em] uppercase text-[#8a8078] hover:text-[#1a1714] transition-colors duration-200"
+              className="text-[0.7rem] font-semibold tracking-[0.2em] uppercase text-[#8a7e74] hover:text-[#c9a85c] transition-colors duration-200"
             >
               {link.label}
             </Link>
@@ -43,7 +43,7 @@ export default function Header() {
         {/* Mobile toggle */}
         <button
           onClick={() => setOpen(!open)}
-          className="md:hidden w-10 h-10 flex items-center justify-center text-[#1a1714] text-lg"
+          className="md:hidden w-10 h-10 flex items-center justify-center text-[#f5f0eb] text-lg"
           aria-label="Toggle menu"
         >
           {open ? "✕" : "☰"}
@@ -52,13 +52,13 @@ export default function Header() {
 
       {/* Mobile nav */}
       {open && (
-        <nav className="md:hidden border-t border-border-light px-6 py-4 flex flex-col gap-1 bg-[#faf8f5]">
+        <nav className="md:hidden border-t border-border px-6 py-4 flex flex-col gap-1 bg-[#141210]">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
               onClick={() => setOpen(false)}
-              className="text-[0.75rem] font-semibold tracking-[0.15em] uppercase text-[#5c554d] hover:text-[#1a1714] py-3 transition-colors"
+              className="text-[0.75rem] font-semibold tracking-[0.15em] uppercase text-[#c4b9ae] hover:text-[#c9a85c] py-3 transition-colors"
             >
               {link.label}
             </Link>

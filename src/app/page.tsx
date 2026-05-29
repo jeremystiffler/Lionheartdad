@@ -80,7 +80,7 @@ export default function Home() {
                 <p className="sub leading-relaxed mb-5">{card.description}</p>
                 <Link
                   href={card.cta}
-                  className="text-[0.7rem] font-semibold tracking-[0.2em] uppercase text-[#8b6f47] hover:text-[#6b5535] transition-colors"
+                  className="text-[0.7rem] font-semibold tracking-[0.2em] uppercase text-[#c9a85c] hover:text-[#a88a48] transition-colors"
                 >
                   {card.ctaLabel} →
                 </Link>
@@ -110,7 +110,7 @@ export default function Home() {
 
           <div className="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
             <div className="card">
-              <h3 className="mb-4 text-[0.85rem] font-semibold tracking-wide uppercase text-[#8b6f47]">
+              <h3 className="mb-4 text-[0.85rem] font-semibold tracking-wide uppercase text-[#c9a85c]">
                 This is for you if…
               </h3>
               <ul className="space-y-3">
@@ -121,8 +121,8 @@ export default function Home() {
                   "You're doing \"okay\" but know there's more",
                   "You need men around you who will tell you the truth",
                 ].map((item, i) => (
-                  <li key={i} className="flex gap-3 items-start text-sm text-[#5c554d]">
-                    <span className="text-[#8b6f47] mt-0.5">→</span>
+                  <li key={i} className="flex gap-3 items-start text-sm text-[#c4b9ae]">
+                    <span className="text-[#c9a85c] mt-0.5">→</span>
                     {item}
                   </li>
                 ))}
@@ -130,7 +130,7 @@ export default function Home() {
             </div>
 
             <div className="card opacity-70">
-              <h3 className="mb-4 text-[0.85rem] font-semibold tracking-wide uppercase text-[#8a8078]">
+              <h3 className="mb-4 text-[0.85rem] font-semibold tracking-wide uppercase text-[#8a7e74]">
                 This isn&apos;t for you if…
               </h3>
               <ul className="space-y-3">
@@ -140,8 +140,8 @@ export default function Home() {
                   "You're not willing to be honest about your struggles",
                   "You think you have it all figured out",
                 ].map((item, i) => (
-                  <li key={i} className="flex gap-3 items-start text-sm text-[#8a8078]">
-                    <span className="text-[#8a8078] mt-0.5">→</span>
+                  <li key={i} className="flex gap-3 items-start text-sm text-[#8a7e74]">
+                    <span className="text-[#8a7e74] mt-0.5">→</span>
                     {item}
                   </li>
                 ))}

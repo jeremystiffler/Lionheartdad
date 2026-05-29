@@ -78,7 +78,7 @@ export default function SmallGroupPage() {
               <div key={item.label}>
                 <div className="eyebrow mb-1">{item.label}</div>
                 <div
-                  className="text-lg text-[#1a1714]"
+                  className="text-lg text-[#f5f0eb]"
                   style={{ fontFamily: "var(--heading)" }}
                 >
                   {item.value}
@@ -95,7 +95,7 @@ export default function SmallGroupPage() {
           <div className="max-w-2xl mx-auto text-center mb-16">
             <span className="eyebrow mb-4">What to Expect</span>
             <h2 className="mb-6">This Is Not a Bible Study</h2>
-            <div className="space-y-5 text-[#5c554d] leading-relaxed text-left">
+            <div className="space-y-5 text-[#c4b9ae] leading-relaxed text-left">
               <p>
                 It&apos;s better. A Bible study teaches you <em>about</em> God&apos;s
                 Word. This group <em>lives</em> it.
@@ -122,7 +122,7 @@ export default function SmallGroupPage() {
             ].map((card) => (
               <div key={card.title} className="card text-center">
                 <h3 className="mb-2 text-[0.85rem] font-semibold tracking-wide uppercase">{card.title}</h3>
-                <p className="text-sm text-[#8a8078] leading-relaxed">{card.text}</p>
+                <p className="text-sm text-[#8a7e74] leading-relaxed">{card.text}</p>
               </div>
             ))}
           </div>
@@ -147,14 +147,14 @@ export default function SmallGroupPage() {
               <div key={week.num} className="card">
                 <div className="flex items-start gap-4">
                   <div
-                    className="shrink-0 w-9 h-9 rounded-full bg-[#8b6f47]/8 border border-[#8b6f47]/15 flex items-center justify-center text-[#8b6f47] font-normal text-sm"
+                    className="shrink-0 w-9 h-9 rounded-full bg-[#c9a85c]/8 border border-[#c9a85c]/15 flex items-center justify-center text-[#c9a85c] font-normal text-sm"
                     style={{ fontFamily: "var(--heading)" }}
                   >
                     {week.num}
                   </div>
                   <div>
                     <h3 className="font-semibold mb-1">{week.title}</h3>
-                    <p className="text-sm text-[#8a8078] leading-relaxed">{week.description}</p>
+                    <p className="text-sm text-[#8a7e74] leading-relaxed">{week.description}</p>
                   </div>
                 </div>
               </div>

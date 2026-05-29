@@ -79,7 +79,7 @@ export default function MailchimpForm() {
             placeholder="your@email.com"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="flex-1 rounded-sm border border-[#8b6f47]/15 bg-white px-4 py-3 text-sm text-[#1a1714] placeholder:text-[#8a8078]/50 focus:outline-none focus:border-[#8b6f47]/30 transition-colors"
+            className="flex-1 rounded-sm border border-[rgba(201,168,92,0.15)] bg-[#1f1c19] px-4 py-3 text-sm text-[#f5f0eb] placeholder:text-[#8a7e74]/50 focus:outline-none focus:border-[rgba(201,168,92,0.3)] transition-colors"
           />
           <button type="submit" className="btn-secondary whitespace-nowrap !rounded-sm">
             Join the List
@@ -98,14 +98,14 @@ export default function MailchimpForm() {
           placeholder="your@email.com"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="flex-1 rounded-sm border border-[#8b6f47]/15 bg-white px-4 py-3 text-sm text-[#1a1714] placeholder:text-[#8a8078]/50 focus:outline-none focus:border-[#8b6f47]/30 transition-colors"
+          className="flex-1 rounded-sm border border-[rgba(201,168,92,0.15)] bg-[#1f1c19] px-4 py-3 text-sm text-[#f5f0eb] placeholder:text-[#8a7e74]/50 focus:outline-none focus:border-[rgba(201,168,92,0.3)] transition-colors"
         />
         <button type="submit" className="btn-secondary whitespace-nowrap !rounded-sm">
           Join the List
         </button>
       </div>
       {status === "success" && (
-        <p className="text-sm text-[#8b6f47] mt-1">{message}</p>
+        <p className="text-sm text-[#c9a85c] mt-1">{message}</p>
       )}
       {status === "error" && (
         <p className="text-sm text-red-400 mt-1">{message}</p>

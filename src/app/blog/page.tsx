@@ -61,19 +61,19 @@ export default function BlogPage() {
               <article key={post.slug} className="card">
                 <div className="flex items-center gap-3 mb-3">
                   <span className="eyebrow">{post.category}</span>
-                  <span className="text-[#8a8078]/30">·</span>
-                  <span className="text-sm text-[#8a8078]/60">{post.date}</span>
+                  <span className="text-[#8a7e74]/30">·</span>
+                  <span className="text-sm text-[#8a7e74]/60">{post.date}</span>
                 </div>
                 <h2 className="mb-2">{post.title}</h2>
                 <p className="sub leading-relaxed mb-4">{post.excerpt}</p>
                 {post.comingSoon ? (
-                  <span className="text-[0.7rem] font-semibold tracking-[0.2em] uppercase text-[#8a8078]/40">
+                  <span className="text-[0.7rem] font-semibold tracking-[0.2em] uppercase text-[#8a7e74]/40">
                     Coming Soon
                   </span>
                 ) : (
                   <Link
                     href={`/blog/${post.slug}`}
-                    className="text-[0.7rem] font-semibold tracking-[0.2em] uppercase text-[#8b6f47] hover:text-[#6b5535] transition-colors"
+                    className="text-[0.7rem] font-semibold tracking-[0.2em] uppercase text-[#c9a85c] hover:text-[#a88a48] transition-colors"
                   >
                     Read More →
                   </Link>
@@ -84,7 +84,7 @@ export default function BlogPage() {
 
           <div className="mt-12 text-center">
             <div className="divider" />
-            <p className="text-sm text-[#8a8078]/50">
+            <p className="text-sm text-[#8a7e74]/50">
               More posts are being written. Check back soon.
             </p>
           </div>

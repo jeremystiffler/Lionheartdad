@@ -59,7 +59,7 @@ export default function CampPage() {
               <div key={item.label}>
                 <div className="eyebrow mb-1">{item.label}</div>
                 <div
-                  className="text-lg text-[#1a1714]"
+                  className="text-lg text-[#f5f0eb]"
                   style={{ fontFamily: "var(--heading)" }}
                 >
                   {item.value}
@@ -79,7 +79,7 @@ export default function CampPage() {
               <h2 className="mb-6 text-balance">
                 More Than a Retreat
               </h2>
-              <div className="space-y-4 text-[#5c554d] leading-relaxed">
+              <div className="space-y-4 text-[#c4b9ae] leading-relaxed">
                 <p>
                   Most men&apos;s retreats are comfortable. Hotels. Keynote
                   speakers. Maybe a breakout session. You go home inspired and
@@ -109,7 +109,7 @@ export default function CampPage() {
                 {highlights.map((item, i) => (
                   <div key={i} className="card">
                     <div className="font-semibold mb-0.5">{item.title}</div>
-                    <p className="text-sm text-[#8a8078] leading-relaxed">{item.desc}</p>
+                    <p className="text-sm text-[#8a7e74] leading-relaxed">{item.desc}</p>
                   </div>
                 ))}
               </div>
@@ -143,14 +143,14 @@ export default function CampPage() {
                 <div className="shrink-0 w-[70px] text-right pt-1">
                   <span className="eyebrow">{item.date}</span>
                 </div>
-                <div className="relative pl-6 border-l border-[#8b6f47]/10">
+                <div className="relative pl-6 border-l border-[#c9a85c]/10">
                   <h3
                     className="font-semibold mb-1"
                     style={{ fontFamily: "var(--heading)" }}
                   >
                     {item.title}
                   </h3>
-                  <p className="text-sm text-[#8a8078] leading-relaxed">{item.description}</p>
+                  <p className="text-sm text-[#8a7e74] leading-relaxed">{item.description}</p>
                 </div>
               </div>
             ))}
