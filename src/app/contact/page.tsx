@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import CalendlyEmbed from "@/components/CalendlyEmbed";
 import MailchimpForm from "@/components/MailchimpForm";
 
 export const metadata: Metadata = {
-  title: "Contact — Lion Intentional Fathers",
+  title: "Contact",
   description:
     "Get in touch with Lion. Whether you have questions, want to join the brotherhood, or are interested in the small group or camp — reach out.",
 };
@@ -13,10 +14,17 @@ const CALENDLY_URL = "https://calendly.com/jeremystiffler/30min";
 export default function ContactPage() {
   return (
     <>
-
       {/* ═══ HERO ═══ */}
-      <section className="section-spacious flex items-center">
-        <div className="container text-center">
+      <section className="hero-overlay">
+        <Image
+          src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=1920&q=80"
+          alt="Father and son walking together"
+          fill
+          priority
+          className="hero-bg-image"
+          sizes="100vw"
+        />
+        <div className="container text-center py-20 md:py-28">
           <span className="eyebrow mb-6">Contact</span>
           <h1 className="text-balance mb-6">Let&apos;s Talk</h1>
           <p className="lead max-w-lg mx-auto">
@@ -29,31 +37,29 @@ export default function ContactPage() {
       {/* ═══ OPTIONS ═══ */}
       <section className="section-spacious bg-secondary">
         <div className="container">
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-
+          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             {/* Email */}
             <div className="card text-center">
+              <div className="text-4xl mb-4">✉️</div>
               <h3 className="mb-3">Send an Email</h3>
               <p className="sub leading-relaxed mb-6">
                 The simplest way to reach us. Jeremy responds personally.
               </p>
-              <a
-                href="mailto:jeremy@lionheartdad.com"
-                className="btn-primary"
-              >
+              <a href="mailto:jeremy@lionheartdad.com" className="btn-primary">
                 Email Jeremy
               </a>
             </div>
 
             {/* Call */}
             <div className="card text-center">
+              <div className="text-4xl mb-4">📞</div>
               <h3 className="mb-3">Book a Call</h3>
               <p className="sub leading-relaxed mb-6">
-                Schedule a 15-minute conversation. No pressure. Just two guys talking.
+                Schedule a 30-minute conversation. No pressure. Just two guys
+                talking.
               </p>
               <CalendlyEmbed url={CALENDLY_URL} />
             </div>
-
           </div>
         </div>
       </section>
@@ -81,7 +87,6 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
-
     </>
   );
 }

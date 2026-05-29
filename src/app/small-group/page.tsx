@@ -1,62 +1,82 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Small Group — Lion Intentional Fathers",
+  title: "Small Group",
   description:
     "A 7-week small group for fathers at Man of War Church. September 14 – October 26, 2026. Scripture, accountability, and brotherhood.",
+  openGraph: {
+    title: "Small Group — Lion Intentional Fathers",
+    description:
+      "A 7-week small group for fathers at Man of War Church. September 14 – October 26, 2026.",
+  },
 };
 
 const curriculum = [
   {
     num: 1,
     title: "The Father God Intended",
-    description: "Who is God as Father? What does His fatherhood reveal about ours? Genesis 1–3, Psalm 103:13, Matthew 7:11.",
+    description:
+      "Who is God as Father? What does His fatherhood reveal about ours? Genesis 1–3, Psalm 103:13, Matthew 7:11.",
   },
   {
     num: 2,
     title: "The Weight of the Crown",
-    description: "What does biblical headship actually look like? Ephesians 5:25–33, Colossians 3:19. Sacrificial, not tyrannical.",
+    description:
+      "What does biblical headship actually look like? Ephesians 5:25–33, Colossians 3:19. Sacrificial, not tyrannical.",
   },
   {
     num: 3,
     title: "Training Up Without Provoking",
-    description: "Ephesians 6:4 unpacked. How to discipline in love, not anger. Deuteronomy 6:4–9 in the modern home.",
+    description:
+      "Ephesians 6:4 unpacked. How to discipline in love, not anger. Deuteronomy 6:4–9 in the modern home.",
   },
   {
     num: 4,
     title: "The Praying Father",
-    description: "Your weapon most neglected: intercession for your children. Mark 14:38, James 5:16.",
+    description:
+      "Your weapon most neglected: intercession for your children. Mark 14:38, James 5:16.",
   },
   {
     num: 5,
     title: "Money, Work, and Priorities",
-    description: "Stewarding what God entrusted. 1 Timothy 5:8, Matthew 6:33. Work-life balance is a myth — it's worship alignment.",
+    description:
+      "Stewarding what God entrusted. 1 Timothy 5:8, Matthew 6:33. Work-life balance is a myth — it's worship alignment.",
   },
   {
     num: 6,
     title: "Leading Through Crisis",
-    description: "When your marriage is hard. When your kids rebel. When God feels silent. James 1:2–4, Psalm 46.",
+    description:
+      "When your marriage is hard. When your kids rebel. When God feels silent. James 1:2–4, Psalm 46.",
   },
   {
     num: 7,
     title: "Leaving a Legacy",
-    description: "Where do we go from here? Joshua 24:15, 2 Timothy 2:2. Building a plan. Committing to the men at your side.",
+    description:
+      "Where do we go from here? Joshua 24:15, 2 Timothy 2:2. Building a plan. Committing to the men at your side.",
   },
 ];
 
 export default function SmallGroupPage() {
   return (
     <>
-
       {/* ═══ HERO ═══ */}
-      <section className="section-spacious flex items-center">
-        <div className="container text-center">
+      <section className="hero-overlay">
+        <Image
+          src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=1920&q=80"
+          alt="Men in a small group discussion"
+          fill
+          priority
+          className="hero-bg-image"
+          sizes="100vw"
+        />
+        <div className="container text-center py-20 md:py-28">
           <span className="eyebrow mb-6">Small Group</span>
           <h1 className="text-balance mb-6">
             7 Weeks That Will
             <br />
-            Change Your Fatherhood
+            <span className="gold-shimmer">Change Your Fatherhood</span>
           </h1>
           <p className="lead max-w-xl mx-auto">
             A men&apos;s small group at Man of War Church. Real talk. Real
@@ -92,7 +112,7 @@ export default function SmallGroupPage() {
       {/* ═══ WHAT TO EXPECT ═══ */}
       <section className="section-spacious">
         <div className="container">
-          <div className="max-w-2xl mx-auto text-center mb-16">
+          <div className="max-w-2xl mx-auto text-center mb-14">
             <span className="eyebrow mb-4">What to Expect</span>
             <h2 className="mb-6">This Is Not a Bible Study</h2>
             <div className="space-y-5 text-[#c4b9ae] leading-relaxed text-left">
@@ -114,19 +134,48 @@ export default function SmallGroupPage() {
             </div>
           </div>
 
-          <div className="grid sm:grid-cols-3 gap-5 max-w-3xl mx-auto">
+          <div className="grid sm:grid-cols-3 gap-4 max-w-3xl mx-auto">
             {[
-              { title: "Scripture-Centered", text: "Every week built around key passages on fatherhood, leadership, and the family." },
-              { title: "Accountability", text: "Weekly check-ins. What did you do? What did you miss? No judgment — just faithfulness." },
-              { title: "Church-Anchored", text: "Hosted at Man of War Church. Connected to the body. Not a side project." },
+              {
+                title: "Scripture-Centered",
+                text: "Every week built around key passages on fatherhood, leadership, and the family.",
+                icon: "📖",
+              },
+              {
+                title: "Accountability",
+                text: "Weekly check-ins. What did you do? What did you miss? No judgment — just faithfulness.",
+                icon: "🤝",
+              },
+              {
+                title: "Church-Anchored",
+                text: "Hosted at Man of War Church. Connected to the body. Not a side project.",
+                icon: "⛪",
+              },
             ].map((card) => (
               <div key={card.title} className="card text-center">
-                <h3 className="mb-2 text-[0.85rem] font-semibold tracking-wide uppercase">{card.title}</h3>
-                <p className="text-sm text-[#8a7e74] leading-relaxed">{card.text}</p>
+                <div className="text-3xl mb-3">{card.icon}</div>
+                <h3 className="mb-2 text-[0.8rem] font-bold tracking-wide uppercase">
+                  {card.title}
+                </h3>
+                <p className="text-sm text-[#8a7e74] leading-relaxed">
+                  {card.text}
+                </p>
               </div>
             ))}
           </div>
         </div>
+      </section>
+
+      {/* ═══ IMAGE BREAK ═══ */}
+      <section className="relative h-[35vh] md:h-[40vh] overflow-hidden">
+        <Image
+          src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=1920&q=80"
+          alt="Men in fellowship together"
+          fill
+          className="object-cover"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-[#141210]/50" />
       </section>
 
       {/* ═══ CURRICULUM ═══ */}
@@ -147,14 +196,16 @@ export default function SmallGroupPage() {
               <div key={week.num} className="card">
                 <div className="flex items-start gap-4">
                   <div
-                    className="shrink-0 w-9 h-9 rounded-full bg-[#c9a85c]/8 border border-[#c9a85c]/15 flex items-center justify-center text-[#c9a85c] font-normal text-sm"
+                    className="shrink-0 w-10 h-10 rounded-full bg-[#c9a85c]/8 border border-[#c9a85c]/15 flex items-center justify-center text-[#c9a85c] font-normal text-sm"
                     style={{ fontFamily: "var(--heading)" }}
                   >
                     {week.num}
                   </div>
                   <div>
                     <h3 className="font-semibold mb-1">{week.title}</h3>
-                    <p className="text-sm text-[#8a7e74] leading-relaxed">{week.description}</p>
+                    <p className="text-sm text-[#8a7e74] leading-relaxed">
+                      {week.description}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -190,7 +241,6 @@ export default function SmallGroupPage() {
           </a>
         </div>
       </section>
-
     </>
   );
 }

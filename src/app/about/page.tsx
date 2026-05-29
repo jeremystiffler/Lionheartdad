@@ -1,19 +1,32 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "About — Lion Intentional Fathers",
+  title: "About",
   description:
     "Learn about Lion and Jeremy Stiffler's vision for equipping fathers through biblical brotherhood, mentorship, and intentional community.",
+  openGraph: {
+    title: "About Lion — Intentional Fathers",
+    description:
+      "Learn about Lion and Jeremy Stiffler's vision for equipping fathers through biblical brotherhood.",
+  },
 };
 
 export default function AboutPage() {
   return (
     <>
-
       {/* ═══ HERO ═══ */}
-      <section className="section-spacious flex items-center">
-        <div className="container text-center">
+      <section className="hero-overlay">
+        <Image
+          src="https://images.unsplash.com/photo-1511895426328-dc8714191300?w=1920&q=80"
+          alt="Father and sons in warm light"
+          fill
+          priority
+          className="hero-bg-image"
+          sizes="100vw"
+        />
+        <div className="container text-center py-20 md:py-28">
           <span className="eyebrow mb-6">About</span>
           <h1 className="text-balance mb-6">About Lion</h1>
           <p className="lead max-w-xl mx-auto">
@@ -39,34 +52,44 @@ export default function AboutPage() {
       {/* ═══ JEREMY ═══ */}
       <section className="section-spacious">
         <div className="container">
-          <div className="grid md:grid-cols-5 gap-12 md:gap-16 items-start">
+          <div className="grid md:grid-cols-5 gap-10 md:gap-14 items-start">
             {/* Profile */}
             <div className="md:col-span-2">
-              <div className="card text-center md:sticky md:top-24">
-                <div className="w-20 h-20 rounded-full bg-[#1a1714] border border-[rgba(201,168,92,0.15)] mx-auto mb-5 flex items-center justify-center text-4xl">
-                  🦁
+              <div className="md:sticky md:top-24">
+                <div className="image-card aspect-[4/5] mb-6">
+                  <Image
+                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80"
+                    alt="Jeremy Stiffler"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 40vw"
+                    className="object-cover"
+                  />
                 </div>
-                <h3
-                  className="text-xl mb-1"
-                  style={{ fontFamily: "var(--heading)" }}
-                >
-                  Jeremy Stiffler
-                </h3>
-                <p className="text-sm text-[#8a7e74] mb-5">Lexington, Kentucky</p>
-                <div className="flex flex-wrap gap-2 justify-center">
-                  {[
-                    "Father of boys (8 & 11)",
-                    "Worship Leader",
-                    "AV/Media Director",
-                    "Musician & Songwriter",
-                  ].map((tag) => (
-                    <span
-                      key={tag}
-                      className="text-[0.65rem] font-semibold tracking-[0.1em] uppercase text-[#8a7e74] border border-[rgba(201,168,92,0.10)] rounded-full px-3 py-1 bg-[#1c1917]"
-                    >
-                      {tag}
-                    </span>
-                  ))}
+                <div className="text-center">
+                  <h3
+                    className="text-xl mb-1"
+                    style={{ fontFamily: "var(--heading)" }}
+                  >
+                    Jeremy Stiffler
+                  </h3>
+                  <p className="text-sm text-[#8a7e74] mb-4">
+                    Lexington, Kentucky
+                  </p>
+                  <div className="flex flex-wrap gap-2 justify-center">
+                    {[
+                      "Father of boys (8 & 11)",
+                      "Worship Leader",
+                      "AV/Media Director",
+                      "Musician & Songwriter",
+                    ].map((tag) => (
+                      <span
+                        key={tag}
+                        className="text-[0.6rem] font-bold tracking-[0.1em] uppercase text-[#8a7e74] border border-[rgba(201,168,92,0.10)] rounded-full px-3 py-1 bg-[#1c1917]"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
@@ -91,8 +114,8 @@ export default function AboutPage() {
                   of War Church in Lexington, KY. A multi-instrumentalist and
                   songwriter who&apos;s spent years helping churches encounter
                   God through music. And a father of two boys, ages 8 and 11,
-                  who knows firsthand that loving your kids well is the
-                  hardest, holy work you&apos;ll ever do.
+                  who knows firsthand that loving your kids well is the hardest,
+                  holy work you&apos;ll ever do.
                 </p>
                 <blockquote
                   className="border-l-2 border-[#c9a85c]/30 pl-5 py-2 italic text-[#f5f0eb]"
@@ -105,8 +128,8 @@ export default function AboutPage() {
                 </blockquote>
                 <p>
                   So Lion was born — not as a program, but as a commitment. A
-                  small group of men who decided they would rather be
-                  intentional fathers than accidental ones.
+                  small group of men who decided they would rather be intentional
+                  fathers than accidental ones.
                 </p>
               </div>
             </div>
@@ -114,34 +137,43 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* ═══ IMAGE BREAK ═══ */}
+      <section className="relative h-[35vh] md:h-[45vh] overflow-hidden">
+        <Image
+          src="https://images.unsplash.com/photo-1536640712-4d4c36ff0e4e?w=1920&q=80"
+          alt="Warm light through trees"
+          fill
+          className="object-cover"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-[#141210]/50" />
+      </section>
+
       {/* ═══ VISION ═══ */}
       <section className="section-spacious bg-secondary">
         <div className="container">
-          <div className="grid md:grid-cols-2 gap-12 md:gap-16">
+          <div className="grid md:grid-cols-2 gap-10 md:gap-14">
             <div>
               <span className="eyebrow mb-4">The Vision</span>
               <h2 className="mb-6 text-balance">15 Years From Now</h2>
               <div className="space-y-4 text-[#c4b9ae] leading-relaxed">
                 <p>
-                  The vision isn&apos;t small. Over the next 15 years, Lion
-                  aims to see a network of fathers and young men across
-                  communities — men who were discipled as dads, who disciple
-                  their sons, who then disciple the next generation.
+                  The vision isn&apos;t small. Over the next 15 years, Lion aims
+                  to see a network of fathers and young men across communities —
+                  men who were discipled as dads, who disciple their sons, who
+                  then disciple the next generation.
                 </p>
                 <p>
                   It&apos;s a multiplication model. One father impacts his
                   household. His sons learn to lead. And the cycle breaks:
-                  generations of passive, disengaged fatherhood replaced by
-                  men who lead with courage and humility.
+                  generations of passive, disengaged fatherhood replaced by men
+                  who lead with courage and humility.
                 </p>
               </div>
             </div>
 
             <div>
-              <h3
-                className="text-[0.85rem] font-semibold tracking-wide uppercase mb-5"
-                style={{ fontFamily: "var(--body)" }}
-              >
+              <h3 className="text-[0.8rem] font-bold tracking-wide uppercase mb-5 text-[#c9a85c]">
                 What We&apos;re Building Toward
               </h3>
               <div className="space-y-3">
@@ -164,7 +196,9 @@ export default function AboutPage() {
                   },
                 ].map((item, i) => (
                   <div key={i} className="card">
-                    <div className="eyebrow mb-1.5 text-[#c9a85c]">{item.phase}</div>
+                    <div className="eyebrow mb-1.5 text-[#c9a85c]">
+                      {item.phase}
+                    </div>
                     <p className="text-sm text-[#c4b9ae]">{item.text}</p>
                   </div>
                 ))}
@@ -177,7 +211,7 @@ export default function AboutPage() {
       {/* ═══ FOUNDATION ═══ */}
       <section className="section-spacious">
         <div className="container">
-          <div className="grid md:grid-cols-2 gap-12 md:gap-16">
+          <div className="grid md:grid-cols-2 gap-10 md:gap-14">
             <div>
               <span className="eyebrow mb-4">Our Foundation</span>
               <h2 className="mb-8 text-balance">
@@ -201,7 +235,7 @@ export default function AboutPage() {
             </div>
 
             <div className="card">
-              <h3 className="text-[0.85rem] font-semibold tracking-wide uppercase mb-5">
+              <h3 className="text-[0.8rem] font-bold tracking-wide uppercase mb-5 text-[#c9a85c]">
                 What We Believe
               </h3>
               <ul className="space-y-3.5">
@@ -215,7 +249,9 @@ export default function AboutPage() {
                 ].map((belief, i) => (
                   <li key={i} className="flex gap-3">
                     <span className="text-[#c9a85c] mt-0.5 opacity-50">✝</span>
-                    <span className="text-sm text-[#c4b9ae] leading-relaxed">{belief}</span>
+                    <span className="text-sm text-[#c4b9ae] leading-relaxed">
+                      {belief}
+                    </span>
                   </li>
                 ))}
               </ul>
@@ -241,7 +277,6 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-
     </>
   );
 }

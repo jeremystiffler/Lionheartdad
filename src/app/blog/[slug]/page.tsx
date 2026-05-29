@@ -1,16 +1,16 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import EmailSignup from "@/components/EmailSignup";
 
-// ─── Blog Post Data ───
-// In the future this can be fetched from a CMS or markdown files.
-// For now, we define posts here and look them up by slug.
 const POSTS: Record<
   string,
   {
     title: string;
     date: string;
     category: string;
+    image: string;
+    imageAlt: string;
     body: React.ReactNode;
   }
 > = {
@@ -18,6 +18,8 @@ const POSTS: Record<
     title: "Welcome to Lion",
     date: "2026",
     category: "Vision",
+    image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80",
+    imageAlt: "Majestic mountain landscape",
     body: (
       <>
         <p>
@@ -45,6 +47,8 @@ const POSTS: Record<
     title: "What It Means to Be Fathered Well",
     date: "2026",
     category: "Identity",
+    image: "https://images.unsplash.com/photo-1511895426328-dc8714191300?w=1200&q=80",
+    imageAlt: "Father and sons together in warm light",
     body: (
       <>
         <p>
@@ -73,12 +77,14 @@ const POSTS: Record<
     title: "The First Commandment for Dads",
     date: "2026",
     category: "Teaching",
+    image: "https://images.unsplash.com/photo-1536640712-4d4c36ff0e4e?w=1200&q=80",
+    imageAlt: "Warm light through trees",
     body: (
       <>
         <p>
           Before &ldquo;train up a child in the way he should go&rdquo; —
-          before any parenting advice, before any fatherhood framework —
-          Jesus said something that reshapes everything.
+          before any parenting advice, before any fatherhood framework — Jesus
+          said something that reshapes everything.
         </p>
         <blockquote>
           <p>
@@ -103,7 +109,6 @@ const POSTS: Record<
   },
 };
 
-// ─── Generate static params for Next.js ───
 export async function generateStaticParams() {
   return Object.keys(POSTS).map((slug) => ({ slug }));
 }
@@ -115,14 +120,18 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const post = POSTS[slug];
-  if (!post) return { title: "Post Not Found — Lion Blog" };
+  if (!post) return { title: "Post Not Found" };
   return {
-    title: `${post.title} — Lion Blog`,
+    title: post.title,
     description: `${post.title} — ${post.category} — reflections on biblical fatherhood from Lion.`,
+    openGraph: {
+      title: `${post.title} — Lion Blog`,
+      description: `${post.title} — reflections on biblical fatherhood.`,
+      type: "article",
+    },
   };
 }
 
-// ─── Blog Post Page ───
 export default async function BlogPostPage({
   params,
 }: {
@@ -133,12 +142,10 @@ export default async function BlogPostPage({
 
   if (!post) {
     return (
-      <section className="relative min-h-[60vh] flex items-center justify-center">
+      <section className="section-spacious flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-3xl font-bold mb-4" style={{ fontFamily: "var(--font-heading)" }}>
-            Post Not Found
-          </h1>
-          <p className="text-text-muted mb-8">
+          <h1 className="text-3xl font-bold mb-4">Post Not Found</h1>
+          <p className="text-[#8a7e74] mb-8">
             Sorry, we couldn&apos;t find that article.
           </p>
           <Link href="/blog" className="btn-secondary">
@@ -151,52 +158,44 @@ export default async function BlogPostPage({
 
   return (
     <>
-
       {/* ═══ ARTICLE HERO ═══ */}
-      <section className="relative overflow-hidden pt-16 pb-12 md:pt-24 md:pb-16">
-        <div className="glow-orb glow-orb-accent w-[400px] h-[400px] -top-20 right-1/4 opacity-[0.05]" />
-        <div className="relative mx-auto max-w-3xl px-6">
-          <Link
-            href="/blog"
-            className="inline-flex items-center gap-2 text-sm text-text-muted hover:text-foreground transition-colors duration-300 mb-8 group"
-          >
-            <span className="group-hover:-translate-x-1 transition-transform duration-300">←</span>
-            All Posts
-          </Link>
-
-          <div className="flex items-center gap-3 mb-6">
-            <span className="text-xs font-bold uppercase tracking-widest text-accent bg-accent/8 px-3 py-1 rounded-full">
+      <section className="hero-overlay" style={{ minHeight: "60vh" }}>
+        <Image
+          src={post.image}
+          alt={post.imageAlt}
+          fill
+          priority
+          className="hero-bg-image"
+          sizes="100vw"
+        />
+        <div className="container text-center py-20">
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <span className="text-[0.65rem] font-bold uppercase tracking-[0.3em] text-[#c9a85c] bg-[#141210]/50 px-4 py-1.5 rounded-full backdrop-blur-sm border border-[#c9a85c]/20">
               {post.category}
             </span>
-            <span className="text-xs text-text-muted/50">·</span>
-            <span className="text-xs text-text-muted/60">{post.date}</span>
+            <span className="text-sm text-[#f5f0eb]/50">·</span>
+            <span className="text-sm text-[#f5f0eb]/60">{post.date}</span>
           </div>
-
-          <h1
-            className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-balance mb-8"
-            style={{ fontFamily: "var(--font-heading)" }}
-          >
-            {post.title}
-          </h1>
+          <h1 className="text-balance">{post.title}</h1>
         </div>
       </section>
 
       {/* ═══ ARTICLE BODY ═══ */}
-      <article className="mx-auto max-w-3xl px-6 pb-20">
-        <div className="prose prose-invert max-w-none space-y-6 text-text-muted leading-relaxed [&_h2]:text-2xl [&_h2]:font-bold [&_h2]:text-foreground [&_h2]:font-heading [&_h2]:mt-12 [&_h2]:mb-4 [&_p]:leading-relaxed [&_blockquote]:border-l-2 [&_blockquote]:border-accent/30 [&_blockquote]:pl-6 [&_blockquote]:italic [&_blockquote]:text-foreground/80 [&_blockquote_p]:text-foreground/80 [&_cite]:block [&_cite]:mt-3 [&_cite]:text-sm [&_cite]:text-text-muted [&_cite]:not-italic">
-          {post.body}
+      <article className="section">
+        <div className="container">
+          <div className="blog-prose max-w-3xl mx-auto">{post.body}</div>
         </div>
       </article>
 
       {/* ═══ EMAIL SIGNUP — every blog post ═══ */}
-      <section className="mx-auto max-w-2xl px-6 pb-20">
-        <div className="h-px bg-gradient-to-r from-transparent via-accent/20 to-transparent mb-16" />
-        <EmailSignup
-          heading="Want More Like This?"
-          subtext="Join the Lion email list and get new posts, verses, and fatherhood reflections delivered straight to your inbox."
-        />
+      <section className="section bg-warm">
+        <div className="container">
+          <EmailSignup
+            heading="Want More Like This?"
+            subtext="Join the Lion email list and get new posts, verses, and fatherhood reflections delivered straight to your inbox."
+          />
+        </div>
       </section>
-
     </>
   );
 }

@@ -1,9 +1,15 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Weekend Camp — Lion Intentional Fathers",
+  title: "Weekend Camp 2027",
   description:
     "A camp for 20 men. Outdoors. Unplugged. Raw. May 7–9, 2027. Where walls come down and real transformation happens.",
+  openGraph: {
+    title: "Weekend Camp 2027 — Lion Intentional Fathers",
+    description:
+      "A camp for 20 men. Outdoors. Unplugged. Raw. May 7–9, 2027.",
+  },
 };
 
 const timeline = [
@@ -27,17 +33,24 @@ const highlights = [
 export default function CampPage() {
   return (
     <>
-
       {/* ═══ HERO ═══ */}
-      <section className="section-spacious flex items-center">
-        <div className="container text-center">
+      <section className="hero-overlay">
+        <Image
+          src="https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=1920&q=80"
+          alt="Camping tents under the stars in the wilderness"
+          fill
+          priority
+          className="hero-bg-image"
+          sizes="100vw"
+        />
+        <div className="container text-center py-20 md:py-28">
           <span className="eyebrow mb-6">Weekend Camp 2027</span>
           <h1 className="text-balance mb-6">
             20 Men.
             <br />
             One Weekend.
             <br />
-            No Turning Back.
+            <span className="gold-shimmer">No Turning Back.</span>
           </h1>
           <p className="lead max-w-xl mx-auto">
             Outdoors. Unplugged. Raw. This is where walls come down and real
@@ -73,12 +86,10 @@ export default function CampPage() {
       {/* ═══ THE CONCEPT ═══ */}
       <section className="section-spacious">
         <div className="container">
-          <div className="grid md:grid-cols-2 gap-12 md:gap-16">
+          <div className="grid md:grid-cols-2 gap-10 md:gap-14">
             <div>
               <span className="eyebrow mb-4">The Concept</span>
-              <h2 className="mb-6 text-balance">
-                More Than a Retreat
-              </h2>
+              <h2 className="mb-6 text-balance">More Than a Retreat</h2>
               <div className="space-y-4 text-[#c4b9ae] leading-relaxed">
                 <p>
                   Most men&apos;s retreats are comfortable. Hotels. Keynote
@@ -99,17 +110,16 @@ export default function CampPage() {
             </div>
 
             <div>
-              <h3
-                className="text-[0.85rem] font-semibold tracking-wide uppercase mb-5"
-                style={{ fontFamily: "var(--body)" }}
-              >
+              <h3 className="text-[0.8rem] font-bold tracking-wide uppercase mb-5 text-[#c9a85c]">
                 Weekend Highlights
               </h3>
               <div className="space-y-3">
                 {highlights.map((item, i) => (
                   <div key={i} className="card">
                     <div className="font-semibold mb-0.5">{item.title}</div>
-                    <p className="text-sm text-[#8a7e74] leading-relaxed">{item.desc}</p>
+                    <p className="text-sm text-[#8a7e74] leading-relaxed">
+                      {item.desc}
+                    </p>
                   </div>
                 ))}
               </div>
@@ -118,13 +128,20 @@ export default function CampPage() {
         </div>
       </section>
 
-      {/* ═══ SCRIPTURE ═══ */}
-      <section className="section bg-warm">
-        <div className="container text-center">
-          <div className="pullquote">
+      {/* ═══ IMAGE BREAK ═══ */}
+      <section className="relative h-[40vh] md:h-[50vh] overflow-hidden">
+        <Image
+          src="https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?w=1920&q=80"
+          alt="Men gathered around a campfire at night"
+          fill
+          className="object-cover"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-[#141210]/55 flex items-center justify-center">
+          <div className="pullquote !text-[#f5f0eb]">
             &ldquo;I have fought the good fight, I have finished the race, I
             have kept the faith.&rdquo;
-            <cite>— 2 Timothy 4:7</cite>
+            <cite className="!text-[#c9a85c]">— 2 Timothy 4:7</cite>
           </div>
         </div>
       </section>
@@ -144,13 +161,16 @@ export default function CampPage() {
                   <span className="eyebrow">{item.date}</span>
                 </div>
                 <div className="relative pl-6 border-l border-[#c9a85c]/10">
+                  <div className="absolute left-[-5px] top-2 w-2 h-2 rounded-full bg-[#c9a85c]/30" />
                   <h3
                     className="font-semibold mb-1"
                     style={{ fontFamily: "var(--heading)" }}
                   >
                     {item.title}
                   </h3>
-                  <p className="text-sm text-[#8a7e74] leading-relaxed">{item.description}</p>
+                  <p className="text-sm text-[#8a7e74] leading-relaxed">
+                    {item.description}
+                  </p>
                 </div>
               </div>
             ))}
@@ -164,8 +184,8 @@ export default function CampPage() {
           <span className="eyebrow mb-4">Raise Your Hand</span>
           <h2 className="mb-4">Join Us at Camp</h2>
           <p className="lead max-w-md mx-auto mb-10">
-            Registration opens November 2026. Express interest now and be the first
-            to know.
+            Registration opens November 2026. Express interest now and be the
+            first to know.
           </p>
           <a
             href="mailto:jeremy@lionheartdad.com?subject=Weekend Camp 2027 Interest"
@@ -175,7 +195,6 @@ export default function CampPage() {
           </a>
         </div>
       </section>
-
     </>
   );
 }
