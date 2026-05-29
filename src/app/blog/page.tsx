@@ -42,75 +42,52 @@ export default function BlogPage() {
     <>
 
       {/* ═══ HERO ═══ */}
-      <section className="relative overflow-hidden min-h-[45vh] flex items-center">
-        <div className="glow-orb glow-orb-accent w-[400px] h-[400px] top-0 right-1/4 opacity-[0.06]" />
-        <div className="relative mx-auto max-w-4xl px-6 py-20 md:py-28 text-center">
-          <span className="inline-block text-xs font-bold uppercase tracking-[0.3em] text-accent mb-6">
-            Blog
-          </span>
-          <h1
-            className="text-4xl md:text-6xl font-bold leading-[1.1] mb-8 text-balance"
-            style={{ fontFamily: "var(--font-heading)" }}
-          >
-            Words for
-            <br />
-            <span className="gradient-text-warm">the Journey</span>
-          </h1>
-          <p className="text-lg md:text-xl text-text-muted leading-relaxed max-w-2xl mx-auto">
+      <section className="section-spacious flex items-center">
+        <div className="container text-center">
+          <span className="eyebrow mb-6">Blog</span>
+          <h1 className="text-balance mb-6">Words for the Journey</h1>
+          <p className="lead max-w-lg mx-auto">
             Reflections, teaching, and hard-won wisdom on the long road of
             fatherhood. New posts coming regularly.
           </p>
         </div>
-        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent pointer-events-none" />
       </section>
 
       {/* ═══ POSTS ═══ */}
-      <section className="mx-auto max-w-3xl px-6 py-12 md:py-20">
-        <div className="space-y-6">
-          {posts.map((post) => (
-            <article
-              key={post.slug}
-              className="card-soft p-8 md:p-10 group"
-            >
-              <div className="flex items-center gap-3 mb-4">
-                <span className="text-xs font-bold uppercase tracking-widest text-accent bg-accent/8 px-3 py-1 rounded-full">
-                  {post.category}
-                </span>
-                <span className="text-xs text-text-muted/50">·</span>
-                <span className="text-xs text-text-muted/60">{post.date}</span>
-              </div>
-              <h2
-                className="text-2xl font-bold mb-3 group-hover:text-accent transition-colors duration-300"
-                style={{ fontFamily: "var(--font-heading)" }}
-              >
-                {post.title}
-              </h2>
-              <p className="text-text-muted leading-relaxed mb-5">
-                {post.excerpt}
-              </p>
-              {post.comingSoon ? (
-                <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-text-muted/50 border border-border/50 rounded-full px-4 py-1.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-accent/40" />
-                  Coming Soon
-                </span>
-              ) : (
-                <Link
-                  href={`/blog/${post.slug}`}
-                  className="inline-flex items-center gap-2 text-sm font-bold text-accent hover:text-accent-light transition-colors duration-300 group/link"
-                >
-                  Read More
-                  <span className="group-hover/link:translate-x-1 transition-transform duration-300">→</span>
-                </Link>
-              )}
-            </article>
-          ))}
-        </div>
+      <section className="section">
+        <div className="container">
+          <div className="space-y-4 max-w-3xl mx-auto">
+            {posts.map((post) => (
+              <article key={post.slug} className="card">
+                <div className="flex items-center gap-3 mb-3">
+                  <span className="eyebrow">{post.category}</span>
+                  <span className="text-[#8a8078]/30">·</span>
+                  <span className="text-sm text-[#8a8078]/60">{post.date}</span>
+                </div>
+                <h2 className="mb-2">{post.title}</h2>
+                <p className="sub leading-relaxed mb-4">{post.excerpt}</p>
+                {post.comingSoon ? (
+                  <span className="text-[0.7rem] font-semibold tracking-[0.2em] uppercase text-[#8a8078]/40">
+                    Coming Soon
+                  </span>
+                ) : (
+                  <Link
+                    href={`/blog/${post.slug}`}
+                    className="text-[0.7rem] font-semibold tracking-[0.2em] uppercase text-[#8b6f47] hover:text-[#6b5535] transition-colors"
+                  >
+                    Read More →
+                  </Link>
+                )}
+              </article>
+            ))}
+          </div>
 
-        <div className="mt-16 text-center">
-          <div className="w-10 h-[1.5px] bg-accent/15 mx-auto mb-6" />
-          <p className="text-sm text-text-muted/50">
-            More posts are being written. Check back soon.
-          </p>
+          <div className="mt-12 text-center">
+            <div className="divider" />
+            <p className="text-sm text-[#8a8078]/50">
+              More posts are being written. Check back soon.
+            </p>
+          </div>
         </div>
       </section>
 

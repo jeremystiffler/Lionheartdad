@@ -3,8 +3,6 @@
 import { useState } from "react";
 
 // ─── Config ───
-// Replace with your Mailchimp form action URL.
-// Find it in Mailchimp: Audience → Signup forms → Embedded forms → copy the <form action="..."> URL
 const MAILCHIMP_ACTION_URL =
   "https://gmail.us21.list-manage.com/subscribe/post?u=YOUR_U_VALUE&id=YOUR_ID_VALUE";
 const MAILCHIMP_U = "YOUR_U_VALUE";
@@ -23,8 +21,6 @@ export default function MailchimpForm() {
     setMessage("");
 
     try {
-      // Mailchimp embedded forms accept a GET/POST to their endpoint
-      // We use a hidden iframe approach to avoid page navigation
       const form = document.createElement("form");
       form.action = MAILCHIMP_ACTION_URL;
       form.method = "POST";
@@ -37,7 +33,6 @@ export default function MailchimpForm() {
       emailInput.value = email;
       form.appendChild(emailInput);
 
-      // Bot trap field (Mailchimp requires this)
       const botTrap = document.createElement("input");
       botTrap.type = "text";
       botTrap.name = `b_${MAILCHIMP_U}_${MAILCHIMP_ID}`;
@@ -48,7 +43,6 @@ export default function MailchimpForm() {
 
       document.body.appendChild(form);
 
-      // Create hidden iframe for response
       const iframe = document.createElement("iframe");
       iframe.name = "mailchimp-iframe";
       iframe.style.display = "none";
@@ -56,7 +50,6 @@ export default function MailchimpForm() {
 
       form.submit();
 
-      // Cleanup & show success
       setTimeout(() => {
         document.body.removeChild(form);
         document.body.removeChild(iframe);
@@ -71,7 +64,6 @@ export default function MailchimpForm() {
   };
 
   if (MAILCHIMP_ACTION_URL.includes("YOUR_U_VALUE")) {
-    // Placeholder state — show a styled email capture that works with mailto fallback
     return (
       <form
         onSubmit={(e) => {
@@ -87,15 +79,12 @@ export default function MailchimpForm() {
             placeholder="your@email.com"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="flex-1 rounded-xl border border-border/60 bg-background/50 px-4 py-3 text-sm text-foreground placeholder:text-text-muted/50 focus:outline-none focus:border-accent/50 focus:ring-1 focus:ring-accent/20 transition-all duration-300"
+            className="flex-1 rounded-sm border border-[#8b6f47]/15 bg-white px-4 py-3 text-sm text-[#1a1714] placeholder:text-[#8a8078]/50 focus:outline-none focus:border-[#8b6f47]/30 transition-colors"
           />
-          <button type="submit" className="btn-secondary whitespace-nowrap">
+          <button type="submit" className="btn-secondary whitespace-nowrap !rounded-sm">
             Join the List
           </button>
         </div>
-        <p className="text-xs text-text-muted opacity-60">
-          (Live Mailchimp form coming soon — for now we&apos;ll add you manually)
-        </p>
       </form>
     );
   }
@@ -109,14 +98,14 @@ export default function MailchimpForm() {
           placeholder="your@email.com"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="flex-1 rounded-xl border border-border/60 bg-background/50 px-4 py-3 text-sm text-foreground placeholder:text-text-muted/50 focus:outline-none focus:border-accent/50 focus:ring-1 focus:ring-accent/20 transition-all duration-300"
+          className="flex-1 rounded-sm border border-[#8b6f47]/15 bg-white px-4 py-3 text-sm text-[#1a1714] placeholder:text-[#8a8078]/50 focus:outline-none focus:border-[#8b6f47]/30 transition-colors"
         />
-        <button type="submit" className="btn-secondary whitespace-nowrap">
+        <button type="submit" className="btn-secondary whitespace-nowrap !rounded-sm">
           Join the List
         </button>
       </div>
       {status === "success" && (
-        <p className="text-sm text-success mt-1">{message}</p>
+        <p className="text-sm text-[#8b6f47] mt-1">{message}</p>
       )}
       {status === "error" && (
         <p className="text-sm text-red-400 mt-1">{message}</p>

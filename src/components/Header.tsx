@@ -6,21 +6,22 @@ import { useState } from "react";
 const navLinks = [
   { href: "/about", label: "About" },
   { href: "/small-group", label: "Small Group" },
-  { href: "/camp", label: "Weekend Camp" },
+  { href: "/camp", label: "Camp" },
   { href: "/blog", label: "Blog" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export default function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 backdrop-blur-xl bg-background/80 border-b border-border/50">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <Link href="/" className="flex items-center gap-3 group">
-          <span className="text-2xl group-hover:scale-110 transition-transform duration-300">🦁</span>
+    <header className="sticky top-0 z-50 bg-[#faf8f5]/90 backdrop-blur-sm border-b border-border-light">
+      <div className="container-wide flex items-center justify-between py-5 px-6">
+        <Link href="/" className="flex items-center gap-2.5 group">
+          <span className="text-xl">🦁</span>
           <span
-            className="text-xl font-bold tracking-tight group-hover:text-accent transition-colors duration-300"
-            style={{ fontFamily: "var(--font-heading)" }}
+            className="text-lg font-normal tracking-tight text-[#1a1714]"
+            style={{ fontFamily: "var(--heading)" }}
           >
             Lion
           </span>
@@ -32,23 +33,17 @@ export default function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-text-muted hover:text-foreground transition-colors duration-300 uppercase tracking-widest relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[1.5px] after:bg-accent after:transition-all after:duration-300 hover:after:w-full"
+              className="text-[0.7rem] font-semibold tracking-[0.2em] uppercase text-[#8a8078] hover:text-[#1a1714] transition-colors duration-200"
             >
               {link.label}
             </Link>
           ))}
-          <Link
-            href="#join"
-            className="btn-primary text-sm !py-2.5 !px-5 rounded-lg"
-          >
-            Join Us
-          </Link>
         </nav>
 
         {/* Mobile toggle */}
         <button
           onClick={() => setOpen(!open)}
-          className="md:hidden text-foreground text-2xl leading-none w-10 h-10 flex items-center justify-center rounded-lg hover:bg-surface-light transition-colors"
+          className="md:hidden w-10 h-10 flex items-center justify-center text-[#1a1714] text-lg"
           aria-label="Toggle menu"
         >
           {open ? "✕" : "☰"}
@@ -56,31 +51,20 @@ export default function Header() {
       </div>
 
       {/* Mobile nav */}
-      <div
-        className={`md:hidden overflow-hidden transition-all duration-300 ease-out ${
-          open ? "max-h-80 opacity-100" : "max-h-0 opacity-0"
-        }`}
-      >
-        <nav className="border-t border-border/50 bg-surface/95 backdrop-blur-sm px-6 py-4 flex flex-col gap-2">
+      {open && (
+        <nav className="md:hidden border-t border-border-light px-6 py-4 flex flex-col gap-1 bg-[#faf8f5]">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
               onClick={() => setOpen(false)}
-              className="text-sm font-medium text-text-muted hover:text-foreground transition-colors uppercase tracking-widest py-3 px-2 rounded-lg hover:bg-background/50"
+              className="text-[0.75rem] font-semibold tracking-[0.15em] uppercase text-[#5c554d] hover:text-[#1a1714] py-3 transition-colors"
             >
               {link.label}
             </Link>
           ))}
-          <Link
-            href="#join"
-            onClick={() => setOpen(false)}
-            className="btn-primary text-sm text-center mt-2"
-          >
-            Join Us
-          </Link>
         </nav>
-      </div>
+      )}
     </header>
   );
 }

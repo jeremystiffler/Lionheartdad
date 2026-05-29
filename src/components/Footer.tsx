@@ -2,78 +2,53 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="relative mt-auto">
-      {/* Top glow line */}
-      <div className="h-px bg-gradient-to-r from-transparent via-accent/30 to-transparent" />
-
-      <div className="mx-auto max-w-6xl px-6 py-16">
-        <div className="grid gap-12 md:grid-cols-3">
+    <footer className="border-t border-border-light bg-[#faf8f5]">
+      <div className="container py-12">
+        <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-8">
           {/* Brand */}
           <div>
-            <Link href="/" className="flex items-center gap-2 mb-4 group">
-              <span className="text-2xl group-hover:scale-110 transition-transform duration-300">🦁</span>
+            <Link href="/" className="flex items-center gap-2 mb-3">
+              <span className="text-lg">🦁</span>
               <span
-                className="text-xl font-bold"
-                style={{ fontFamily: "var(--font-heading)" }}
+                className="text-base font-normal"
+                style={{ fontFamily: "var(--heading)" }}
               >
                 Lion
               </span>
             </Link>
-            <p className="text-sm text-text-muted leading-relaxed max-w-xs">
+            <p className="text-sm text-[#8a8078] max-w-xs leading-relaxed">
               Equipping men to be the fathers God called them to be.
               Rooted in Scripture. Built on brotherhood.
             </p>
           </div>
 
           {/* Navigate */}
-          <div>
-            <h4 className="text-xs font-bold uppercase tracking-widest text-text-muted mb-4">
-              Navigate
-            </h4>
-            <ul className="space-y-2.5">
-              {[
-                { href: "/about", label: "About" },
-                { href: "/small-group", label: "Small Group" },
-                { href: "/camp", label: "Weekend Camp" },
-                { href: "/blog", label: "Blog" },
-              ].map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-text-muted hover:text-foreground transition-colors duration-300 flex items-center gap-2 group"
-                  >
-                    <span className="w-0 group-hover:w-2 h-[1.5px] bg-accent transition-all duration-300 shrink-0" />
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Get in Touch */}
-          <div>
-            <h4 className="text-xs font-bold uppercase tracking-widest text-text-muted mb-4">
-              Get in Touch
-            </h4>
-            <p className="text-sm text-text-muted mb-4 leading-relaxed">
-              Want to talk? Want to join? Reach out.
-            </p>
-            <a
-              href="mailto:jeremy@lionheartdad.com"
-              className="text-sm font-medium text-accent hover:text-accent-light transition-colors duration-300 inline-flex items-center gap-2"
-            >
-              <span>✉️</span> jeremy@lionheartdad.com
-            </a>
+          <div className="flex flex-wrap gap-x-8 gap-y-3">
+            {[
+              { href: "/about", label: "About" },
+              { href: "/small-group", label: "Small Group" },
+              { href: "/camp", label: "Camp" },
+              { href: "/blog", label: "Blog" },
+              { href: "/contact", label: "Contact" },
+            ].map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="text-[0.7rem] font-semibold tracking-[0.2em] uppercase text-[#8a8078] hover:text-[#1a1714] transition-colors"
+              >
+                {link.label}
+              </Link>
+            ))}
           </div>
         </div>
 
-        {/* Bottom bar */}
-        <div className="mt-12 pt-8 border-t border-border/50 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-text-muted">
+        {/* Bottom */}
+        <div className="mt-10 pt-6 border-t border-border-light flex flex-col sm:flex-row items-center justify-between gap-3">
+          <p className="text-[0.7rem] text-[#8a8078] tracking-wide">
             © {new Date().getFullYear()} Lion — Intentional Fathers. All rights reserved.
           </p>
-          <p className="text-xs text-text-muted/60">
-            Made with faith in Lexington, KY
+          <p className="text-[0.7rem] text-[#8a8078]/60">
+            Lexington, Kentucky
           </p>
         </div>
       </div>

@@ -26,7 +26,7 @@ const curriculum = [
   {
     num: 4,
     title: "The Praying Father",
-    description: "Your weapon most neglected: intercession for your children. Mark 14:38, James 5:16, intercessory prayer practices.",
+    description: "Your weapon most neglected: intercession for your children. Mark 14:38, James 5:16.",
   },
   {
     num: 5,
@@ -50,46 +50,36 @@ export default function SmallGroupPage() {
     <>
 
       {/* ═══ HERO ═══ */}
-      <section className="relative overflow-hidden min-h-[60vh] flex items-center">
-        <div className="glow-orb glow-orb-warm w-[400px] h-[400px] top-0 left-1/4 opacity-[0.08]" />
-        <div className="relative mx-auto max-w-4xl px-6 py-20 md:py-28 text-center">
-          <span className="inline-block text-xs font-bold uppercase tracking-[0.3em] text-accent mb-6">
-            Small Group
-          </span>
-          <h1
-            className="text-4xl md:text-6xl font-bold leading-[1.1] mb-8 text-balance"
-            style={{ fontFamily: "var(--font-heading)" }}
-          >
+      <section className="section-spacious flex items-center">
+        <div className="container text-center">
+          <span className="eyebrow mb-6">Small Group</span>
+          <h1 className="text-balance mb-6">
             7 Weeks That Will
             <br />
-            <span className="gradient-text-warm">Change Your Fatherhood</span>
+            Change Your Fatherhood
           </h1>
-          <p className="text-lg md:text-xl text-text-muted leading-relaxed max-w-2xl mx-auto">
+          <p className="lead max-w-xl mx-auto">
             A men&apos;s small group at Man of War Church. Real talk. Real
             Scripture. Real accountability. It starts September 14.
           </p>
         </div>
-        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent pointer-events-none" />
       </section>
 
       {/* ═══ DETAILS BAR ═══ */}
-      <section className="relative">
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-surface/60 to-transparent" />
-        <div className="relative mx-auto max-w-5xl px-6 py-8">
-          <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-6 text-center">
+      <section className="bg-warm py-10">
+        <div className="container">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             {[
               { label: "Starts", value: "September 14, 2026" },
               { label: "Duration", value: "7 Weeks" },
               { label: "Ends", value: "October 26, 2026" },
               { label: "Location", value: "Man of War Church" },
-            ].map((item, i) => (
-              <div key={i} className="py-2 sm:py-0">
-                <div className="text-xs font-bold uppercase tracking-widest text-text-muted/60 mb-1.5">
-                  {item.label}
-                </div>
+            ].map((item) => (
+              <div key={item.label}>
+                <div className="eyebrow mb-1">{item.label}</div>
                 <div
-                  className="text-lg font-bold text-foreground"
-                  style={{ fontFamily: "var(--font-heading)" }}
+                  className="text-lg text-[#1a1714]"
+                  style={{ fontFamily: "var(--heading)" }}
                 >
                   {item.value}
                 </div>
@@ -100,95 +90,71 @@ export default function SmallGroupPage() {
       </section>
 
       {/* ═══ WHAT TO EXPECT ═══ */}
-      <section className="mx-auto max-w-4xl px-6 py-16 md:py-24">
-        <div className="max-w-3xl">
-          <span className="inline-block text-xs font-bold uppercase tracking-[0.25em] text-accent mb-4">
-            What to Expect
-          </span>
-          <h2
-            className="text-3xl md:text-4xl font-bold leading-tight mb-8 text-balance"
-            style={{ fontFamily: "var(--font-heading)" }}
-          >
-            This Is Not
-            <br />
-            <span className="gradient-text">a Bible Study</span>
-          </h2>
-          <div className="space-y-5 text-text-muted leading-relaxed">
-            <p>
-              It&apos;s better. A Bible study teaches you <em>about</em> God&apos;s
-              Word. This group <em>lives</em> it.
-            </p>
-            <p>
-              Each week, you&apos;ll walk in having read a passage and answered
-              some hard questions about your own household. Then you&apos;ll sit
-              with men who are in the trenches just like you — working through the
-              text, confessing failures, celebrating wins, and committing to one
-              concrete step for the week ahead.
-            </p>
-            <p>
-              This is intercessory brotherhood: men who pray for each other,
-              challenge each other, and refuse to let each other coast.
-            </p>
-          </div>
-        </div>
-
-        <div className="grid sm:grid-cols-3 gap-5 mt-14">
-          {[
-            { icon: "📖", title: "Scripture-Centered", text: "Every week built around key passages on fatherhood, leadership, and the family." },
-            { icon: "🤝", title: "Accountability", text: "Weekly check-ins. What did you do? What did you miss? No judgment — just faithfulness." },
-            { icon: "⛪", title: "Church-Anchored", text: "Hosted at Man of War Church. Connected to the body. Not a side project." },
-          ].map((card, i) => (
-            <div key={i} className="card-soft p-6 text-center">
-              <span className="text-3xl mb-3 block">{card.icon}</span>
-              <h3 className="font-bold mb-2 text-sm" style={{ fontFamily: "var(--font-heading)" }}>{card.title}</h3>
-              <p className="text-xs text-text-muted leading-relaxed">{card.text}</p>
+      <section className="section-spacious">
+        <div className="container">
+          <div className="max-w-2xl mx-auto text-center mb-16">
+            <span className="eyebrow mb-4">What to Expect</span>
+            <h2 className="mb-6">This Is Not a Bible Study</h2>
+            <div className="space-y-5 text-[#5c554d] leading-relaxed text-left">
+              <p>
+                It&apos;s better. A Bible study teaches you <em>about</em> God&apos;s
+                Word. This group <em>lives</em> it.
+              </p>
+              <p>
+                Each week, you&apos;ll walk in having read a passage and answered
+                some hard questions about your own household. Then you&apos;ll sit
+                with men who are in the trenches just like you — working through the
+                text, confessing failures, celebrating wins, and committing to one
+                concrete step for the week ahead.
+              </p>
+              <p>
+                This is intercessory brotherhood: men who pray for each other,
+                challenge each other, and refuse to let each other coast.
+              </p>
             </div>
-          ))}
+          </div>
+
+          <div className="grid sm:grid-cols-3 gap-5 max-w-3xl mx-auto">
+            {[
+              { title: "Scripture-Centered", text: "Every week built around key passages on fatherhood, leadership, and the family." },
+              { title: "Accountability", text: "Weekly check-ins. What did you do? What did you miss? No judgment — just faithfulness." },
+              { title: "Church-Anchored", text: "Hosted at Man of War Church. Connected to the body. Not a side project." },
+            ].map((card) => (
+              <div key={card.title} className="card text-center">
+                <h3 className="mb-2 text-[0.85rem] font-semibold tracking-wide uppercase">{card.title}</h3>
+                <p className="text-sm text-[#8a8078] leading-relaxed">{card.text}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* ═══ CURRICULUM ═══ */}
-      <section className="relative py-16 md:py-24">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-surface/30 to-transparent" />
-        <div className="relative mx-auto max-w-5xl px-6">
+      <section className="section-spacious bg-secondary">
+        <div className="container">
           <div className="text-center mb-14">
-            <span className="inline-block text-xs font-bold uppercase tracking-[0.25em] text-accent mb-4">
-              Curriculum Overview
-            </span>
-            <h2
-              className="text-3xl md:text-4xl font-bold leading-tight mb-4 text-balance"
-              style={{ fontFamily: "var(--font-heading)" }}
-            >
-              The 7-Week Journey
-            </h2>
-            <p className="text-text-muted max-w-xl mx-auto leading-relaxed">
+            <span className="eyebrow mb-4">Curriculum Overview</span>
+            <h2 className="mb-4">The 7-Week Journey</h2>
+            <p className="lead max-w-lg mx-auto">
               Each week builds on the last. By the end, you&apos;ll have a
               framework for your household that&apos;s rooted in the gospel, not
               culture.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-4 lg:gap-5">
+          <div className="grid md:grid-cols-2 gap-4 max-w-4xl mx-auto">
             {curriculum.map((week) => (
-              <div
-                key={week.num}
-                className="card-soft p-6 md:p-7 group"
-              >
+              <div key={week.num} className="card">
                 <div className="flex items-start gap-4">
                   <div
-                    className="shrink-0 w-10 h-10 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center text-accent font-bold text-sm"
-                    style={{ fontFamily: "var(--font-heading)" }}
+                    className="shrink-0 w-9 h-9 rounded-full bg-[#8b6f47]/8 border border-[#8b6f47]/15 flex items-center justify-center text-[#8b6f47] font-normal text-sm"
+                    style={{ fontFamily: "var(--heading)" }}
                   >
                     {week.num}
                   </div>
                   <div>
-                    <h3
-                      className="font-bold mb-1.5 text-base"
-                      style={{ fontFamily: "var(--font-heading)" }}
-                    >
-                      {week.title}
-                    </h3>
-                    <p className="text-sm text-text-muted leading-relaxed">{week.description}</p>
+                    <h3 className="font-semibold mb-1">{week.title}</h3>
+                    <p className="text-sm text-[#8a8078] leading-relaxed">{week.description}</p>
                   </div>
                 </div>
               </div>
@@ -198,35 +164,21 @@ export default function SmallGroupPage() {
       </section>
 
       {/* ═══ QUOTE ═══ */}
-      <section className="relative py-16 md:py-20">
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-accent/[0.03] to-transparent" />
-        <div className="relative mx-auto max-w-3xl px-6 text-center">
-          <div className="w-10 h-[1.5px] bg-accent/20 mx-auto mb-8" />
-          <blockquote
-            className="text-2xl md:text-3xl font-bold leading-snug italic text-foreground/90"
-            style={{ fontFamily: "var(--font-heading)" }}
-          >
+      <section className="section bg-warm">
+        <div className="container text-center">
+          <div className="pullquote">
             &ldquo;As for me and my house, we will serve the Lord.&rdquo;
-          </blockquote>
-          <cite className="block mt-5 text-sm text-text-muted not-italic tracking-wide">
-            — Joshua 24:15 (NIV)
-          </cite>
-          <div className="w-10 h-[1.5px] bg-accent/20 mx-auto mt-8" />
+            <cite>— Joshua 24:15</cite>
+          </div>
         </div>
       </section>
 
       {/* ═══ CTA ═══ */}
-      <section className="relative py-16 md:py-24">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-surface/40 to-transparent" />
-        <div className="glow-orb glow-orb-accent w-[400px] h-[400px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.06]" />
-        <div className="relative mx-auto max-w-2xl px-6 text-center">
-          <h2
-            className="text-2xl md:text-4xl font-bold leading-tight mb-6 text-balance"
-            style={{ fontFamily: "var(--font-heading)" }}
-          >
-            RSVP Now
-          </h2>
-          <p className="text-text-muted leading-relaxed mb-10 max-w-lg mx-auto">
+      <section className="section-spacious">
+        <div className="container text-center">
+          <span className="eyebrow mb-4">RSVP</span>
+          <h2 className="mb-4">Reserve Your Seat</h2>
+          <p className="lead max-w-md mx-auto mb-10">
             Spots are limited to keep the group intimate. Tell us you&apos;re
             coming and we&apos;ll send you the details.
           </p>
